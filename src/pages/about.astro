@@ -1,0 +1,442 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const aboutImages = {
+  hero: "/images/hero.jpg",
+  team: "/images/about-main.jpg",
+  equipment: "/images/about-secondary.jpg"
+};
+---
+
+<Layout 
+  title="About Us | Elite Property Maintenance LLC - Veteran Owned & Operated"
+  description="Learn about Elite Property Maintenance LLC, a proud veteran owned and operated property care business in Central Michigan. Dedicated to discipline, quality, and community."
+>
+  <Header currentPage="about" />
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero" style={`background-image: linear-gradient(rgba(15, 36, 14, 0.85), rgba(15, 36, 14, 0.92)), url('${aboutImages.hero}')`}>
+      <div class="container text-center">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+          <span>About Elite Property Maintenance</span>
+        </div>
+        <h1 class="page-hero-title">VETERAN OWNED. LOCALLY DRIVEN. QUALITY OBSESSED.</h1>
+        <p class="page-hero-subtitle">
+          Bringing military precision, honest American work ethic, and dependable lawn care and property solutions to Central Michigan homes and businesses.
+        </p>
+      </div>
+    </section>
+
+    <!-- MISSION & STORY -->
+    <section class="section story-section">
+      <div class="container story-grid">
+        <div class="story-image-wrap">
+          <div class="story-img-main">
+            <img src={aboutImages.team} alt="Elite Property Maintenance team member" loading="lazy" />
+          </div>
+          <div class="story-experience-card">
+            <span class="exp-number">20+</span>
+            <span class="exp-label">Years of Combined Field Experience</span>
+          </div>
+        </div>
+
+        <div class="story-content">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+            <span>Our Founding Story</span>
+          </div>
+          <h2 class="section-title">BUILT ON A FOUNDATION OF MILITARY DISCIPLINE</h2>
+          <p class="story-lead">
+            Elite Property Maintenance LLC was founded with a singular purpose: to deliver the kind of reliable, thorough, and high-caliber outdoor property care that property owners too often struggle to find.
+          </p>
+          <p class="story-body">
+            After serving in the armed forces, our founder brought the core tenets of military service&mdash;punctuality, uncompromising standards, integrity, and respect&mdash;straight into the property maintenance industry. When we promise to be at your property on Tuesday morning, we are there. When we mow your lawn or plow your driveway, we don't consider the job complete until every edge is razor sharp and every walkway is spotless.
+          </p>
+          <p class="story-body">
+            Whether we are managing an expansive commercial parking lot during a Michigan blizzard or providing weekly mowing for residential neighborhoods, we treat your property with the same care and respect as our own.
+          </p>
+
+          <div class="story-stats-row">
+            <div class="stat-box">
+              <span class="stat-number">100%</span>
+              <span class="stat-text">Veteran Owned &amp; Operated</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">20%</span>
+              <span class="stat-text">Discount for Veterans &amp; Seniors</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">24/7</span>
+              <span class="stat-text">Emergency Storm &amp; Snow Response</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE PILLARS / VALUES -->
+    <section class="section values-section">
+      <div class="container">
+        <div class="text-center values-header">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+            <span>Our Core Values</span>
+          </div>
+          <h2 class="section-title">WHAT SETS ELITE PROPERTY MAINTENANCE APART</h2>
+          <p class="values-subtitle">Every service we perform is guided by four immutable principles.</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+            </div>
+            <h3 class="value-title">Military Precision</h3>
+            <p class="value-desc">
+              We apply disciplined attention to detail. Sharp mowing lines, flush trimming against fences, and tidy cleanups with zero grass clippings left on driveways or flowerbeds.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="value-title">Rock-Solid Reliability</h3>
+            <p class="value-desc">
+              When Michigan weather strikes or mowing season heats up, you need a contractor who shows up consistently. Our schedule is our word, and our word is our bond.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="value-title">Honest, Fair Pricing</h3>
+            <p class="value-desc">
+              No hidden fees, no bait-and-switch estimates. We provide upfront quotes with competitive local rates, plus an automatic 20% discount for veterans and seniors.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="value-title">Comprehensive Capability</h3>
+            <p class="value-desc">
+              From summer lawn care and fall cleanups to winter snow plowing, car hauling, and storm damage remediation, we are your single-call solution year-round.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VETERAN COMMUNITY COMMITMENT -->
+    <section class="section veteran-focus-section">
+      <div class="container focus-grid">
+        <div class="focus-content">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+            <span>Giving Back to Our Community</span>
+          </div>
+          <h2 class="section-title">20% VETERANS &amp; SENIORS DISCOUNT</h2>
+          <p class="focus-lead">
+            We are deeply committed to honoring those who have served in our nation's military and supporting the senior citizens of our Central Michigan community.
+          </p>
+          <p class="focus-body">
+            Property maintenance can become demanding and dangerous as we age, especially during freezing Michigan winters or scorching summer days. That's why we extend a flat 20% discount on all regular lawn care and snow plowing services to qualifying veterans and seniors aged 62+.
+          </p>
+          <div class="focus-actions">
+            <a href="/estimate" class="btn-pill-green">Request Your Discounted Quote &rarr;</a>
+            <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+          </div>
+        </div>
+
+        <div class="focus-image-wrap">
+          <img src={aboutImages.equipment} alt="Commercial lawn mowing machinery" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 90px 0 100px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .page-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 4.5vw, 50px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+
+  .page-hero-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  /* Story Section */
+  .story-section {
+    background-color: var(--color-white);
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .story-image-wrap {
+    position: relative;
+  }
+
+  .story-img-main {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    height: 480px;
+  }
+
+  .story-img-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .story-experience-card {
+    position: absolute;
+    bottom: -25px;
+    right: -20px;
+    background: var(--color-primary);
+    color: #ffffff;
+    border: 4px solid var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 20px 26px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+  }
+
+  .exp-number {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--color-accent-light);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .exp-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .story-lead {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .story-body {
+    font-size: 15px;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .story-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--color-card-border);
+  }
+
+  .stat-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-number {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--color-accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+
+  /* Values Section */
+  .values-section {
+    background-color: var(--color-bg-light);
+  }
+
+  .values-header {
+    max-width: 640px;
+    margin: 0 auto 50px;
+  }
+
+  .values-subtitle {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    margin-top: 8px;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .value-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-lg);
+    padding: 30px 24px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: #c2e1bb;
+  }
+
+  .value-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-md);
+    background-color: var(--color-badge-bg);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .value-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .value-title {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .value-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  /* Veteran Focus Section */
+  .veteran-focus-section {
+    background-color: var(--color-white);
+  }
+
+  .focus-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .focus-lead {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+
+  .focus-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 28px;
+  }
+
+  .focus-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .focus-image-wrap {
+    height: 380px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .focus-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 1024px) {
+    .story-grid,
+    .focus-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .story-experience-card {
+      right: 20px;
+      bottom: -20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .story-stats-row {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+</style>

@@ -1,0 +1,516 @@
+---
+interface Props {
+  showCta?: boolean;
+}
+
+const { showCta } = Astro.props;
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isHome = currentPath === '/';
+const displayCta = showCta !== undefined ? showCta : isHome;
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <!-- Top Footer Row / Newsletter or Contact CTA -->
+  {displayCta && (
+    <div class="footer-cta-strip">
+      <div class="container footer-cta-inner">
+        <div class="footer-cta-text">
+          <span class="cta-kicker">🎖️ VETERAN OWNED & OPERATED</span>
+          <h3 class="cta-heading">Ready For a Pristine, Worry-Free Property?</h3>
+          <p class="cta-desc">Get your free, no-obligation quote or call 989-544-0791 today. Veterans and seniors receive 20% off.</p>
+        </div>
+        <div class="footer-cta-actions">
+          <a href="/estimate" class="btn-pill-green">Request Free Quote &rarr;</a>
+          <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- Main Footer Content -->
+  <div class="footer-main">
+    <div class="container footer-grid">
+      <!-- Col 1: About Brand -->
+      <div class="footer-col brand-col">
+        <div class="footer-logo">
+          <div class="logo-icon-wrap">
+            <svg viewBox="0 0 40 40" class="logo-svg" fill="none">
+              <circle cx="20" cy="20" r="18" fill="#5aa428" />
+              <path d="M12 26C14 21 17 19 23 19C24 16 26 14 29 13C29 16 27 18 25 19C28 20 29 22 29 26H12Z" fill="#ffffff" />
+              <circle cx="17" cy="26" r="3" fill="#173715" />
+              <circle cx="25" cy="26" r="3" fill="#173715" />
+            </svg>
+          </div>
+          <div>
+            <div class="footer-brand-title">ELITE PROPERTY</div>
+            <div class="footer-brand-tag">MAINTENANCE LLC</div>
+          </div>
+        </div>
+
+        <p class="footer-about-text">
+          Dependable, high-quality outdoor property maintenance solutions tailored to residential and commercial properties across Central Michigan. Built on military discipline, precision, and reliable customer care.
+        </p>
+
+        <div class="footer-veteran-badge">
+          <div class="badge-icon">🎖️</div>
+          <div>
+            <strong>100% Veteran Owned</strong>
+            <span>20% Discount for Seniors & Veterans</span>
+          </div>
+        </div>
+
+        <div class="footer-social-connect">
+          <span class="social-connect-label">Connect:</span>
+          <div class="footer-social-icons">
+            <a 
+              href="https://www.facebook.com/dwayne.battle.1293" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="footer-icon-btn facebook" 
+              aria-label="Visit Dwayne Battle on Facebook"
+              title="Follow us on Facebook"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+            <a 
+              href="mailto:info@elitepropertymaintenance.com" 
+              class="footer-icon-btn email" 
+              aria-label="Email Elite Property Maintenance"
+              title="Email us"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Quick Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/services">Our Services</a></li>
+          <li><a href="/projects">Project Gallery</a></li>
+          <li><a href="/estimate">Request Free Estimate</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="/services#lawn-care">Lawn Care (Mowing, Trimming, Edging)</a></li>
+          <li><a href="/services#snow-plowing">Snow Plowing (Driveways, Lots, Sidewalks)</a></li>
+          <li><a href="/services#debris-removal">Debris Removal (Branches, Brush, Waste)</a></li>
+          <li><a href="/services#car-hauling">Car Hauling (Junk & Non-Running Cars)</a></li>
+          <li><a href="/services#cleanup">Spring / Fall Cleanup (Leaf & Property)</a></li>
+          <li><a href="/services#storm-damage">Storm Damage (Tree Removal & Emergency)</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact & Hours -->
+      <div class="footer-col contact-col">
+        <h4 class="footer-col-title">Contact & Service Area</h4>
+        
+        <div class="contact-entry">
+          <div class="entry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.64-3.97 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.97-8.64A2 2 0 018.1 5.24l3 3a2 2 0 01.21 2.97z"/></svg>
+          </div>
+          <div>
+            <span class="entry-label">Direct Phone:</span>
+            <a href="tel:989-544-0791" class="entry-value highlight">989-544-0791</a>
+          </div>
+        </div>
+
+        <div class="contact-entry">
+          <div class="entry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <span class="entry-label">Email:</span>
+            <a href="mailto:info@elitepropertymaintenance.com" class="entry-value">info@elitepropertymaintenance.com</a>
+          </div>
+        </div>
+
+        <div class="contact-entry">
+          <div class="entry-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <span class="entry-label">Working Hours:</span>
+            <span class="entry-value">Mon - Sat: 7:00 AM - 7:00 PM</span>
+            <span class="sub-value">24/7 Emergency Storm & Snow Service</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Legal Strip -->
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p class="copyright-text">
+        &copy; {year} Elite Property Maintenance LLC. All Rights Reserved. Licensed &amp; Insured.
+      </p>
+      <div class="bottom-links">
+        <a href="/estimate">Free Estimates</a>
+        <span>&bull;</span>
+        <a href="/services">Services</a>
+        <span>&bull;</span>
+        <a href="/contact">Contact</a>
+        <span>&bull;</span>
+        <a href="https://www.facebook.com/dwayne.battle.1293" target="_blank" rel="noopener noreferrer" class="bottom-social-link">Facebook</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-primary-dark);
+    color: #ffffff;
+    margin-top: 0;
+    border-top: 4px solid var(--color-accent);
+  }
+
+  /* CTA Strip */
+  .footer-cta-strip {
+    background: linear-gradient(135deg, #163614 0%, #0f240e 100%);
+    padding: 44px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-cta-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .cta-kicker {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: var(--color-accent-light);
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+
+  .cta-heading {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .cta-desc {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    max-width: 600px;
+  }
+
+  .footer-cta-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* Main Footer */
+  .footer-main {
+    padding: 70px 0 50px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
+    gap: 40px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .logo-icon-wrap {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .logo-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer-brand-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+  }
+
+  .footer-brand-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-accent-light);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-about-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 24px;
+  }
+
+  .footer-veteran-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .badge-icon {
+    font-size: 24px;
+  }
+
+  .footer-veteran-badge strong {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  .footer-veteran-badge span {
+    font-size: 12px;
+    color: var(--color-accent-light);
+  }
+
+  /* Social Connect */
+  .footer-social-connect {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .social-connect-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    transition: all 0.25s ease;
+  }
+
+  .footer-icon-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer-icon-btn.facebook:hover {
+    background: #1877f2;
+    border-color: #1877f2;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(24, 119, 242, 0.4);
+  }
+
+  .footer-icon-btn.email:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(90, 164, 40, 0.4);
+  }
+
+  .bottom-social-link {
+    color: var(--color-accent-light) !important;
+    font-weight: 700;
+  }
+
+  .footer-col-title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 22px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  .footer-col-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-full);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent-light);
+    transform: translateX(4px);
+  }
+
+  /* Contact Col */
+  .contact-entry {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .entry-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(90, 164, 40, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--color-accent-light);
+  }
+
+  .entry-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .entry-label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2px;
+  }
+
+  .entry-value {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .entry-value.highlight {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-accent-light);
+  }
+
+  .sub-value {
+    display: block;
+    font-size: 12px;
+    color: #ffc107;
+    margin-top: 3px;
+  }
+
+  /* Bottom Strip */
+  .footer-bottom {
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .footer-bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bottom-links a {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .bottom-links a:hover {
+    color: var(--color-accent-light);
+  }
+
+  @media (max-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .footer-cta-inner {
+      text-align: center;
+      justify-content: center;
+    }
+    .footer-cta-actions {
+      justify-content: center;
+      width: 100%;
+    }
+    .footer-cta-actions a {
+      width: 100%;
+    }
+    .footer-bottom-inner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

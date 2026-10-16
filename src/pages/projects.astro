@@ -1,0 +1,322 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const projects = [
+  {
+    title: "Precision Striped Residential Turf",
+    category: "lawn",
+    categoryLabel: "Lawn Care",
+    image: "/images/service-lawn-care.jpg",
+    desc: "Complete weekly mowing, clean edge trimming against hardscape, and high-velocity debris blowing for a pristine estate lawn."
+  },
+  {
+    title: "Commercial Retail Parking Lot & Sidewalk Snow Clearing",
+    category: "snow",
+    categoryLabel: "Snow Plowing",
+    image: "/images/service-snow-plow.jpg",
+    desc: "24/7 overnight plowing and eco-friendly salt application ensuring clear lanes and safe customer parking during major snowfall."
+  },
+  {
+    title: "Downed Branches & Brush Haul-Away",
+    category: "debris",
+    categoryLabel: "Debris Removal",
+    image: "/images/service-debris.jpg",
+    desc: "Heavy utility trailer loaded with overgrown brush, tree limbs, and yard waste hauled away completely from a residential perimeter."
+  },
+  {
+    title: "Non-Running Vehicle Haul & Lot Clearance",
+    category: "hauling",
+    categoryLabel: "Car Hauling",
+    image: "/images/service-car-haul.jpg",
+    desc: "Safe winching and flatbed transport of non-running scrap vehicle, clearing space on a rural residential driveway."
+  },
+  {
+    title: "Seasonal Fall Leaf Removal & Property Cleanup",
+    category: "cleanup",
+    categoryLabel: "Spring / Fall Cleanup",
+    image: "/images/service-cleanup.jpg",
+    desc: "Thorough multi-stage leaf vacuuming, garden bed dead-heading, soil aeration, and winterization for a 2-acre estate."
+  },
+  {
+    title: "Emergency Fallen Tree Removal & Storm Restoration",
+    category: "storm",
+    categoryLabel: "Storm Damage",
+    image: "/images/service-storm-damage.jpg",
+    desc: "Immediate emergency response to chainsaw a massive fallen oak trunk blocking a driveway and clear all hazardous debris."
+  }
+];
+---
+
+<Layout 
+  title="Our Projects & Portfolio | Elite Property Maintenance LLC"
+  description="Explore our recent lawn care, snow plowing, debris removal, car hauling, cleanups, and storm damage work across Central Michigan. Quality work you can count on."
+>
+  <Header currentPage="projects" />
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero" style="background-image: linear-gradient(rgba(15, 36, 14, 0.86), rgba(15, 36, 14, 0.92)), url('/images/hero.jpg')">
+      <div class="container text-center">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+          <span>Work Showcase</span>
+        </div>
+        <h1 class="page-hero-title">OUR PORTFOLIO OF EXCELLENCE</h1>
+        <p class="page-hero-subtitle">
+          From your lawn to your driveway... we do it all! Browse our recent lawn care, snow plowing, hauling, and cleanup projects in Central Michigan.
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="section projects-section">
+      <div class="container">
+        <!-- Filter Tabs for the 6 exact services -->
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">All Projects</button>
+          <button class="filter-tab" data-filter="lawn">Lawn Care</button>
+          <button class="filter-tab" data-filter="snow">Snow Plowing</button>
+          <button class="filter-tab" data-filter="debris">Debris Removal</button>
+          <button class="filter-tab" data-filter="hauling">Car Hauling</button>
+          <button class="filter-tab" data-filter="cleanup">Spring / Fall Cleanup</button>
+          <button class="filter-tab" data-filter="storm">Storm Damage</button>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid">
+          {projects.map((p) => (
+            <article class="project-card" data-category={p.category}>
+              <div class="project-image-wrap">
+                <img src={p.image} alt={p.title} loading="lazy" />
+                <span class="project-tag">{p.categoryLabel}</span>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">{p.title}</h3>
+                <p class="project-desc">{p.desc}</p>
+                <div class="project-footer">
+                  <a href="/estimate" class="project-cta-link">
+                    <span>Request Free Estimate</span>
+                    <span class="arrow">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 85px 0 95px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .page-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 4.5vw, 48px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .page-hero-subtitle {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .projects-section {
+    background-color: var(--color-bg-light);
+    padding: 40px 0 80px;
+  }
+
+  /* Filter Tabs */
+  .filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 45px;
+  }
+
+  .filter-tab {
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-full);
+    padding: 10px 20px;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .filter-tab:hover {
+    color: var(--color-primary);
+    border-color: #bcdbb4;
+  }
+
+  .filter-tab.active {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 12px var(--color-accent-glow);
+  }
+
+  /* Projects Grid */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .project-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: #bcdbb4;
+  }
+
+  .project-image-wrap {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+  }
+
+  .project-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .project-card:hover .project-image-wrap img {
+    transform: scale(1.06);
+  }
+
+  .project-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(16, 36, 14, 0.85);
+    backdrop-filter: blur(4px);
+    color: var(--color-accent-light);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+  }
+
+  .project-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .project-title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+
+  .project-footer {
+    padding-top: 16px;
+    border-top: 1px solid #f0f4ee;
+  }
+
+  .project-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--color-accent);
+  }
+
+  .project-cta-link:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  .arrow {
+    transition: transform 0.2s ease;
+  }
+
+
+
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filter = tab.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          (card as HTMLElement).style.display = 'flex';
+        } else {
+          (card as HTMLElement).style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

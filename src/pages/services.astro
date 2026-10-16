@@ -1,0 +1,490 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const serviceImages = {
+  hero: "/images/hero.jpg",
+  lawnCare: "/images/service-lawn-care.jpg",
+  snowPlow: "/images/service-snow-plow.jpg",
+  debris: "/images/service-debris.jpg",
+  carHaul: "/images/service-car-haul.jpg",
+  cleanup: "/images/service-cleanup.jpg",
+  stormDamage: "/images/service-storm-damage.jpg"
+};
+---
+
+<Layout 
+  title="Our Services | Elite Property Maintenance LLC"
+  description="Explore our full range of property maintenance services: lawn care, snow plowing, car hauling, debris removal, seasonal cleanup, and storm damage in Central Michigan."
+>
+  <Header currentPage="services" />
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero" style={`background-image: linear-gradient(rgba(15, 36, 14, 0.86), rgba(15, 36, 14, 0.92)), url('${serviceImages.hero}')`}>
+      <div class="container text-center">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+          <span>Comprehensive Outdoor Solutions</span>
+        </div>
+        <h1 class="page-hero-title">EXPERT LAWN &amp; PROPERTY SERVICES</h1>
+        <p class="page-hero-subtitle">
+          From your lawn to your driveway, we do it all! Precision maintenance, heavy hauling, winter safety, and seasonal property transformations.
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICES NAVIGATION PILLS -->
+    <section class="service-nav-bar">
+      <div class="container">
+        <div class="nav-pills-row">
+          <a href="#lawn-care" class="pill-nav-item">Lawn Care</a>
+          <a href="#snow-plowing" class="pill-nav-item">Snow Plowing</a>
+          <a href="#debris-removal" class="pill-nav-item">Debris Removal</a>
+          <a href="#car-hauling" class="pill-nav-item">Car Hauling</a>
+          <a href="#cleanup" class="pill-nav-item">Seasonal Cleanups</a>
+          <a href="#storm-damage" class="pill-nav-item">Storm Damage</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAILED SERVICE BLOCKS -->
+    <section class="section service-details-section">
+      <div class="container service-blocks-wrap">
+        
+        <!-- 1. LAWN CARE -->
+        <article class="service-block" id="lawn-care">
+          <div class="service-block-media">
+            <img src={serviceImages.lawnCare} alt="Lawn care service" loading="lazy" />
+            <span class="media-badge">Most Popular</span>
+          </div>
+          <div class="service-block-body">
+            <div class="section-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+              <span>Service 01</span>
+            </div>
+            <h2 class="service-block-title">LAWN CARE, MOWING &amp; EDGING</h2>
+            <p class="service-block-lead">
+              A lush, healthy, evenly cut lawn creates an unforgettable first impression. We deliver precision mowing, weed whacking, and razor-sharp perimeter edging.
+            </p>
+            <ul class="service-check-list">
+              <li><strong>Precision Striping &amp; Mowing:</strong> Sharp blades cut at the ideal seasonal height for root strength and drought defense.</li>
+              <li><strong>Clean Edge Trimming:</strong> Flush trimming along curbs, walkways, garden beds, trees, and fence perimeters.</li>
+              <li><strong>Walkway Debris Blowing:</strong> High-powered leaf blowers clear all patios, driveways, and sidewalks before we leave.</li>
+              <li><strong>Flexible Schedules:</strong> Weekly, bi-weekly, or seasonal scheduled routes tailored to your grass growth rate.</li>
+            </ul>
+            <div class="service-block-actions">
+              <a href="/estimate" class="btn-pill-green">Request Free Lawn Quote &rarr;</a>
+              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. SNOW PLOWING -->
+        <article class="service-block reverse" id="snow-plowing">
+          <div class="service-block-media">
+            <img src={serviceImages.snowPlow} alt="Snow plowing truck" loading="lazy" />
+            <span class="media-badge">Winter Essential</span>
+          </div>
+          <div class="service-block-body">
+            <div class="section-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+              <span>Service 02</span>
+            </div>
+            <h2 class="service-block-title">SNOW PLOWING &amp; WINTER MAINTENANCE</h2>
+            <p class="service-block-lead">
+              Michigan winters demand dependable, proactive snow management. We keep driveways, commercial parking lots, and walkways clear and safe all season long.
+            </p>
+            <ul class="service-check-list">
+              <li><strong>Residential Driveway Plowing:</strong> Cleared early before your morning commute with care around lawn edges.</li>
+              <li><strong>Commercial Parking Lot Clearing:</strong> Zero-downtime snow removal keeping your business accessible and liability-free.</li>
+              <li><strong>Sidewalk Clearing &amp; Salting:</strong> Eco-friendly ice melting applications to eliminate slip and fall hazards.</li>
+              <li><strong>24/7 Blizzard Response:</strong> We monitor radar round the clock to dispatch trucks as soon as snow triggers accumulate.</li>
+            </ul>
+            <div class="service-block-actions">
+              <a href="/estimate" class="btn-pill-green">Get Winter Snow Contract &rarr;</a>
+              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. DEBRIS REMOVAL -->
+        <article class="service-block" id="debris-removal">
+          <div class="service-block-media">
+            <img src={serviceImages.debris} alt="Debris and brush hauling" loading="lazy" />
+            <span class="media-badge">Heavy Duty</span>
+          </div>
+          <div class="service-block-body">
+            <div class="section-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+              <span>Service 03</span>
+            </div>
+            <h2 class="service-block-title">DEBRIS &amp; BRUSH REMOVAL</h2>
+            <p class="service-block-lead">
+              Overgrown brush, tree branches, piles of lawn waste, and yard clutter ruin curb appeal and attract pests. We chop, load, and haul it away.
+            </p>
+            <ul class="service-check-list">
+              <li><strong>Downed Branches &amp; Yard Waste:</strong> Complete removal of deadwood, tree clippings, and organic piles.</li>
+              <li><strong>Fence Line &amp; Brush Clearing:</strong> Clearing tangled weeds, wild buckthorn, and invasive growth along perimeters.</li>
+              <li><strong>Environmentally Responsible Disposal:</strong> Wood and organic yard debris are diverted to regional mulching and compost centers.</li>
+              <li><strong>Zero Heavy Lifting for You:</strong> Our crew loads the trailers, rakes the site clean, and hauls everything away.</li>
+            </ul>
+            <div class="service-block-actions">
+              <a href="/estimate" class="btn-pill-green">Get Debris Quote &rarr;</a>
+              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. CAR HAULING -->
+        <article class="service-block reverse" id="car-hauling">
+          <div class="service-block-media">
+            <img src={serviceImages.carHaul} alt="Vehicle and car hauling truck" loading="lazy" />
+            <span class="media-badge">Local &amp; Long-Distance</span>
+          </div>
+          <div class="service-block-body">
+            <div class="section-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+              <span>Service 04</span>
+            </div>
+            <h2 class="service-block-title">VEHICLE &amp; CAR HAULING</h2>
+            <p class="service-block-lead">
+              Got an eyesore junk car, non-running truck, trailer, or equipment taking up valuable space? We provide professional flatbed and winch transport.
+            </p>
+            <ul class="service-check-list">
+              <li><strong>Junk &amp; Non-Running Vehicles:</strong> Fast extraction from driveways, fields, garages, or backyards.</li>
+              <li><strong>Local &amp; Long-Distance Transport:</strong> Reliable equipment, tractor, and vehicle relocation across Michigan.</li>
+              <li><strong>Proper Winching &amp; Secure Strapping:</strong> Handled by experienced operators with safety-first protocol.</li>
+              <li><strong>Licensed &amp; Insured:</strong> Full cargo protection and certified equipment for peace of mind.</li>
+            </ul>
+            <div class="service-block-actions">
+              <a href="/estimate" class="btn-pill-green">Schedule Vehicle Haul &rarr;</a>
+              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. SEASONAL CLEANUPS -->
+        <article class="service-block" id="cleanup">
+          <div class="service-block-media">
+            <img src={serviceImages.cleanup} alt="Fall leaf cleanup" loading="lazy" />
+            <span class="media-badge">Spring &amp; Fall</span>
+          </div>
+          <div class="service-block-body">
+            <div class="section-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+              <span>Service 05</span>
+            </div>
+            <h2 class="service-block-title">SPRING &amp; FALL SEASONAL CLEANUPS</h2>
+            <p class="service-block-lead">
+              Preparing your landscape for the changing seasons is vital for long-term turf health and preventing mold or rot under thick snow.
+            </p>
+            <ul class="service-check-list">
+              <li><strong>Spring Thaw Cleanups:</strong> Raking winter dead grass, sticks, and gravel spread during snow plowing.</li>
+              <li><strong>Fall Leaf Vacuuming &amp; Haul:</strong> Deep leaf clearing from turf, landscape beds, window wells, and patios.</li>
+              <li><strong>Garden Bed Refresh:</strong> Perennial cutbacks, edging freshening, and winter preparation.</li>
+              <li><strong>Lawn Aeration Prep:</strong> Relieving soil compaction to allow water and fertilizer deep into the root zone.</li>
+            </ul>
+            <div class="service-block-actions">
+              <a href="/estimate" class="btn-pill-green">Book Seasonal Cleanup &rarr;</a>
+              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. EMERGENCY STORM DAMAGE -->
+        <article class="service-block reverse" id="storm-damage">
+          <div class="service-block-media">
+            <img src={serviceImages.stormDamage} alt="Storm damage tree removal" loading="lazy" />
+            <span class="media-badge">24/7 Rapid Response</span>
+          </div>
+          <div class="service-block-body">
+            <div class="section-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+              <span>Service 06</span>
+            </div>
+            <h2 class="service-block-title">EMERGENCY STORM DAMAGE RESTORATION</h2>
+            <p class="service-block-lead">
+              Severe thunderstorms, ice storms, and high wind can cause dangerous tree branches to collapse across driveways, roofs, and structures.
+            </p>
+            <ul class="service-check-list">
+              <li><strong>24/7 Priority Emergency Line:</strong> Call 989-544-0791 immediately for rapid emergency response.</li>
+              <li><strong>Downed Tree &amp; Limb Chainsawing:</strong> Careful bucking of fallen timber without further property impact.</li>
+              <li><strong>Driveway &amp; Access Clearance:</strong> Opening vital access routes for homeowners and emergency vehicles.</li>
+              <li><strong>Debris Hauling &amp; Tarping:</strong> Full site cleanup and debris removal so repairs can proceed smoothly.</li>
+            </ul>
+            <div class="service-block-actions">
+              <a href="tel:989-544-0791" class="btn-pill-green">Urgent Storm Call: 989-544-0791</a>
+              <a href="/estimate" class="btn-pill-white">Submit Online Request &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- VETERAN DISCOUNT BANNER -->
+    <section class="veteran-promo-section">
+      <div class="container text-center">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
+          <span>Honoring Those Who Served</span>
+        </div>
+        <h2 class="promo-title">20% OFF REGULAR SERVICES FOR VETERANS &amp; SENIORS</h2>
+        <p class="promo-desc">
+          Combine any of our maintenance services and receive our veteran or senior discount. Contact us today to learn more.
+        </p>
+        <div class="promo-actions">
+          <a href="/estimate" class="btn-pill-green">Request Your Free Estimate &rarr;</a>
+          <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 85px 0 95px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .page-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 4.5vw, 48px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .page-hero-subtitle {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Navigation Bar */
+  .service-nav-bar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-card-border);
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .nav-pills-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .pill-nav-item {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-primary);
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-card-border);
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    transition: all 0.2s ease;
+  }
+
+  .pill-nav-item:hover {
+    background: var(--color-accent);
+    color: #ffffff;
+    border-color: var(--color-accent);
+  }
+
+  /* Service Blocks Wrap */
+  .service-details-section {
+    background-color: var(--color-bg-light);
+  }
+
+  .service-blocks-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .service-block {
+    scroll-margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+  }
+
+  .service-block:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: #bcdbb4;
+  }
+
+  .service-block.reverse {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .service-block.reverse .service-block-media {
+    order: 2;
+  }
+
+  .service-block.reverse .service-block-body {
+    order: 1;
+  }
+
+  .service-block-media {
+    position: relative;
+    height: 380px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .service-block-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .service-block:hover .service-block-media img {
+    transform: scale(1.05);
+  }
+
+  .media-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(16, 36, 14, 0.85);
+    backdrop-filter: blur(4px);
+    color: var(--color-accent-light);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+  }
+
+  .service-block-title {
+    font-family: var(--font-heading);
+    font-size: clamp(24px, 3.2vw, 32px);
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  .service-block-lead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  .service-check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+
+  .service-check-list li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .service-check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--color-accent);
+    font-weight: 800;
+  }
+
+  .service-check-list strong {
+    color: var(--color-primary);
+  }
+
+  .service-block-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* Promo Banner */
+  .veteran-promo-section {
+    background: linear-gradient(135deg, #173715 0%, #0d210c 100%);
+    color: #ffffff;
+    padding: 70px 0;
+  }
+
+  .promo-title {
+    font-family: var(--font-heading);
+    font-size: clamp(26px, 3.8vw, 38px);
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 14px;
+  }
+
+  .promo-desc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 600px;
+    margin: 0 auto 28px;
+  }
+
+  .promo-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1024px) {
+    .service-block,
+    .service-block.reverse {
+      grid-template-columns: 1fr;
+    }
+
+    .service-block.reverse .service-block-media {
+      order: 1;
+    }
+
+    .service-block.reverse .service-block-body {
+      order: 2;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .service-block {
+      padding: 24px 18px;
+    }
+
+    .service-block-media {
+      height: 240px;
+    }
+  }
+</style>

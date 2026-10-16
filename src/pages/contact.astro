@@ -1,0 +1,510 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const contactHeroBg = "/images/hero.jpg";
+---
+
+<Layout 
+  title="Contact Us | Elite Property Maintenance LLC - 989-544-0791"
+  description="Contact Elite Property Maintenance LLC for lawn care, snow plowing, car hauling, and debris cleanup in Central Michigan. Call 989-544-0791 for immediate service."
+>
+  <Header currentPage="contact" />
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="page-hero" style={`background-image: linear-gradient(rgba(15, 36, 14, 0.86), rgba(15, 36, 14, 0.92)), url('${contactHeroBg}')`}>
+      <div class="container text-center">
+        <div class="section-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+          <span>Fast, Friendly Communication</span>
+        </div>
+        <h1 class="page-hero-title">GET IN TOUCH WITH OUR TEAM</h1>
+        <p class="page-hero-subtitle">
+          Have a question about our services, need an emergency storm tree removal, or want to schedule weekly mowing? Reach out today.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT CHANNELS STRIP -->
+    <section class="contact-channels-strip">
+      <div class="container channels-grid">
+        <!-- Phone -->
+        <a href="tel:989-544-0791" class="channel-card">
+          <div class="channel-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.64-3.97 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.97-8.64A2 2 0 018.1 5.24l3 3a2 2 0 01.21 2.97z"/></svg>
+          </div>
+          <span class="channel-label">Direct Phone Line</span>
+          <strong class="channel-value">989-544-0791</strong>
+          <span class="channel-note">Mon - Sat: 7am - 7pm &bull; 24/7 Emergencies</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:info@elitepropertymaintenance.com" class="channel-card">
+          <div class="channel-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <span class="channel-label">Send Us An Email</span>
+          <strong class="channel-value">info@eliteproperty...</strong>
+          <span class="channel-note">Responses within 24 business hours</span>
+        </a>
+
+        <!-- Service Area -->
+        <div class="channel-card">
+          <div class="channel-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <span class="channel-label">Service Area</span>
+          <strong class="channel-value">Central Michigan</strong>
+          <span class="channel-note">Midland, Gladwin, Beaverton &amp; Surrounding</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM & SERVICE AREA DETAILS -->
+    <section class="section contact-content-section">
+      <div class="container contact-grid">
+        <!-- Form -->
+        <div class="contact-form-card">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
+            <span>Send a Message</span>
+          </div>
+          <h2 class="form-card-title">HOW CAN WE HELP YOU TODAY?</h2>
+          <p class="form-card-subtitle">
+            Fill out your details below and our veteran-owned team will be in touch promptly.
+          </p>
+
+          <form id="contact-page-form" class="contact-form-el">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="contact-name">Your Full Name *</label>
+                <input type="text" id="contact-name" name="name" required placeholder="John Doe" />
+              </div>
+              <div class="form-field">
+                <label for="contact-phone">Phone Number *</label>
+                <input type="tel" id="contact-phone" name="phone" required placeholder="989-544-0791" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" name="email" required placeholder="john@example.com" />
+              </div>
+              <div class="form-field">
+                <label for="contact-service">Service Interested In</label>
+                <select id="contact-service" name="service">
+                  <option value="lawn-care">Lawn Care (Mowing, Trimming, Edging)</option>
+                  <option value="snow-plowing">Snow Plowing (Driveways, Lots, Sidewalks)</option>
+                  <option value="debris-removal">Debris Removal (Branches, Brush, Waste)</option>
+                  <option value="car-hauling">Car Hauling (Junk &amp; Non-Running Cars)</option>
+                  <option value="seasonal-cleanup">Spring / Fall Cleanup (Leaves, Property)</option>
+                  <option value="storm-damage">Storm Damage (Tree Removal, Emergency)</option>
+                  <option value="other">Other Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-message">Your Message / Property Details *</label>
+              <textarea id="contact-message" name="message" rows="4" required placeholder="Describe what you need, your address or general location, and any questions..."></textarea>
+            </div>
+
+            <div class="contact-discount-hint">
+              <span>🎖️ Are you a veteran or senior? Mention it in your message to claim your 20% discount!</span>
+            </div>
+
+            <button type="submit" class="btn-pill-green contact-submit-btn">
+              <span>SEND MESSAGE</span>
+              <span class="btn-arrow">&rarr;</span>
+            </button>
+          </form>
+
+          <div id="contact-success-box" class="contact-success-state" style="display: none;">
+            <div class="success-icon">✓</div>
+            <h3>Thank You For Contacting Us!</h3>
+            <p>Your message has been received. Our team will get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- Service Area & Coverage Info -->
+        <div class="contact-info-col">
+          <div class="info-block area-block">
+            <h3 class="info-block-title">Communities We Serve</h3>
+            <p class="area-desc">
+              Elite Property Maintenance LLC is proud to provide prompt, reliable property maintenance across Central Michigan, including but not limited to:
+            </p>
+            <div class="towns-grid">
+              <div class="town-item"><span>Midland</span></div>
+              <div class="town-item"><span>Gladwin</span></div>
+              <div class="town-item"><span>Beaverton</span></div>
+              <div class="town-item"><span>Sanford</span></div>
+              <div class="town-item"><span>Coleman</span></div>
+              <div class="town-item"><span>Clare</span></div>
+              <div class="town-item"><span>Auburn</span></div>
+              <div class="town-item"><span>Mt. Pleasant</span></div>
+            </div>
+            <p class="towns-note">Don't see your town? Call 989-544-0791 to confirm service to your address!</p>
+          </div>
+
+          <div class="info-block hours-block">
+            <h3 class="info-block-title">Business &amp; Emergency Hours</h3>
+            <ul class="hours-list">
+              <li>
+                <span>Monday &ndash; Friday</span>
+                <strong>7:00 AM &ndash; 7:00 PM</strong>
+              </li>
+              <li>
+                <span>Saturday</span>
+                <strong>8:00 AM &ndash; 5:00 PM</strong>
+              </li>
+              <li>
+                <span>Sunday</span>
+                <strong>Emergency On-Call</strong>
+              </li>
+              <li class="emergency-row">
+                <span>Winter Snow &amp; Storm Damage</span>
+                <strong class="text-accent">24/7 Rapid Dispatch</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 85px 0 95px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .page-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 4.5vw, 48px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .page-hero-subtitle {
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Channels Strip */
+  .contact-channels-strip {
+    background-color: var(--color-white);
+    padding: 40px 0 50px;
+    margin-top: 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  .channels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .channel-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-xl);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.25s ease;
+  }
+
+  .channel-card:hover {
+    transform: translateY(-4px);
+    border-color: #bcdbb4;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .channel-icon-wrap {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: var(--color-badge-bg);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .channel-icon-wrap svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .channel-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-subtle);
+    margin-bottom: 4px;
+  }
+
+  .channel-value {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+  }
+
+  .channel-note {
+    font-size: 12px;
+    color: var(--color-text-muted);
+  }
+
+  /* Contact Main Section */
+  .contact-content-section {
+    background-color: var(--color-bg-light);
+    padding: 30px 0 80px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1.2fr;
+    gap: 40px;
+    align-items: flex-start;
+  }
+
+  .contact-form-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .form-card-title {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+  }
+
+  .form-card-subtitle {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin-bottom: 24px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .form-field label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #f7faf6;
+    border: 1px solid #dce8db;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    color: var(--color-text);
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    background-color: #ffffff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(90, 164, 40, 0.15);
+  }
+
+  .contact-discount-hint {
+    background: #fbf1f1;
+    border: 1px solid #fecaca;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--color-veteran-red);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .contact-submit-btn {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .contact-success-state {
+    text-align: center;
+    padding: 40px 10px;
+  }
+
+  .contact-success-state .success-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-badge-bg);
+    color: var(--color-accent);
+    font-size: 24px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  /* Info Column */
+  .contact-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .info-block {
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-xl);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .info-block-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-badge-bg);
+  }
+
+  .area-desc {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .towns-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .town-item {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-card-border);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .towns-note {
+    font-size: 12px;
+    color: var(--color-text-subtle);
+    font-style: italic;
+  }
+
+  .hours-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f4ee;
+  }
+
+  .hours-list li span {
+    color: var(--color-text-muted);
+  }
+
+  .hours-list li strong {
+    color: var(--color-primary);
+  }
+
+  .emergency-row {
+    background-color: var(--color-bg-light);
+    padding: 10px !important;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-card-border) !important;
+  }
+
+  @media (max-width: 1024px) {
+    .channels-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .contact-form-card {
+      padding: 24px 18px;
+    }
+
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const contactForm = document.getElementById('contact-page-form') as HTMLFormElement;
+  const successBox = document.getElementById('contact-success-box');
+
+  if (contactForm && successBox) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      contactForm.style.display = 'none';
+      successBox.style.display = 'block';
+    });
+  }
+</script>

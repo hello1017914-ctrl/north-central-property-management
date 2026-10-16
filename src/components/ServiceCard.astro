@@ -1,0 +1,201 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  imageSrc: string;
+  altText: string;
+  link?: string;
+  features?: string[];
+  themeColor?: 'green' | 'blue' | 'emerald' | 'purple' | 'orange' | 'red';
+  iconType?: 'lawn' | 'snow' | 'debris' | 'car' | 'cleanup' | 'storm';
+}
+
+const { 
+  title, 
+  description, 
+  imageSrc, 
+  altText, 
+  link = "/services", 
+  features = [], 
+  themeColor = 'green',
+  iconType = 'lawn'
+} = Astro.props;
+---
+
+<article class={`service-card theme-${themeColor}`}>
+  <div class="card-image-wrap">
+    <img src={imageSrc} alt={altText} loading="lazy" class="card-image" />
+    
+  </div>
+
+  <div class="card-body">
+    <div class="card-title-row">
+      <h3 class="card-title">{title}</h3>
+    </div>
+
+    <p class="card-description">{description}</p>
+    
+    {features.length > 0 && (
+      <ul class="card-features-list">
+        {features.map((item) => (
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="check-icon">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <div class="card-footer-action">
+      <a href={link} class="card-link">
+        <span>Learn More &amp; Rates</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="arrow-icon">
+          <path d="M7 17L17 7M17 7H7M17 7V17" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .service-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-xl);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 18px rgba(23, 55, 21, 0.05);
+    position: relative;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Color themes matching the flyer */
+  .theme-green:hover { border-color: #5aa428; }
+  .theme-green .card-link { color: #5aa428; }
+
+  .theme-blue:hover { border-color: #2563eb; }
+  .theme-blue .card-link { color: #2563eb; }
+
+  .theme-emerald:hover { border-color: #15803d; }
+  .theme-emerald .card-link { color: #15803d; }
+
+  .theme-purple:hover { border-color: #7c3aed; }
+  .theme-purple .card-link { color: #7c3aed; }
+
+  .theme-orange:hover { border-color: #ea580c; }
+  .theme-orange .card-link { color: #ea580c; }
+
+  .theme-red:hover { border-color: #dc2626; }
+  .theme-red .card-link { color: #dc2626; }
+
+  .card-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--color-bg-subtle);
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .service-card:hover .card-image {
+    transform: scale(1.06);
+  }
+
+
+  .card-body {
+    padding: 20px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .card-title {
+    font-family: var(--font-heading);
+    font-size: 21px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+
+  .card-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+  }
+
+  .card-features-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+    padding: 12px 14px;
+    background: var(--color-bg-light);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-card-border);
+  }
+
+  .card-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .check-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .card-footer-action {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #f0f4ee;
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: all 0.2s ease;
+  }
+
+  .arrow-icon {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+  }
+
+  .service-card:hover .arrow-icon {
+    transform: translate(3px, -3px);
+  }
+</style>

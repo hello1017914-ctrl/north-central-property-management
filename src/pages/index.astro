@@ -1,0 +1,1310 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+
+// Local high-fidelity generated images
+const images = {
+  hero: "/images/hero.jpg",
+  about1: "/images/about-main.jpg",
+  about2: "/images/about-secondary.jpg",
+  howItWorks: "/images/service-lawn-care.jpg",
+  // The 6 exact flyer services
+  lawnCare: "/images/service-lawn-care.jpg",
+  snowPlow: "/images/service-snow-plow.jpg",
+  debris: "/images/service-debris.jpg",
+  carHaul: "/images/service-car-haul.jpg",
+  cleanup: "/images/service-cleanup.jpg",
+  stormDamage: "/images/service-storm-damage.jpg",
+  // Gallery
+  gallery1: "/images/service-lawn-care.jpg",
+  gallery2: "/images/service-snow-plow.jpg",
+  gallery3: "/images/service-debris.jpg",
+  gallery4: "/images/service-cleanup.jpg",
+  gallery5: "/images/service-car-haul.jpg",
+};
+---
+
+<Layout 
+  title="Elite Property Maintenance LLC | Keeping Your Property Looking Its Best"
+  description="From your lawn to your driveway... we do it all! Veteran owned & operated lawn care, snow plowing, debris removal, car hauling, cleanups & storm damage. Call 989-544-0791."
+>
+  <Header currentPage="home" />
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-wrap">
+      <div class="hero-bg" style={`background-image: linear-gradient(rgba(15, 36, 14, 0.78), rgba(15, 36, 14, 0.88)), url('${images.hero}')`}>
+        <div class="container hero-container">
+          <div class="hero-content">
+            <!-- Pill Tag -->
+            <div class="hero-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+              </svg>
+              <span>VETERAN OWNED &amp; OPERATED &bull; KEEPING YOUR PROPERTY LOOKING ITS BEST</span>
+            </div>
+
+            <!-- Big Bold Punchy Headline -->
+            <h1 class="hero-headline">
+              FROM YOUR LAWN TO YOUR DRIVEWAY... WE DO IT ALL!
+            </h1>
+
+            <!-- Subheading / Copy -->
+            <p class="hero-subheading">
+              At Elite Property Maintenance LLC, we deliver dependable and affordable outdoor maintenance solutions tailored to residential and commercial properties throughout Central Michigan.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-actions">
+              <a href="#quote-section" class="btn-pill-green">
+                <span>REQUEST YOUR FREE QUOTE</span>
+                <span class="btn-arrow">&rarr;</span>
+              </a>
+              <a href="/contact" class="btn-pill-white">
+                <span>CONTACT US TODAY</span>
+                <span class="btn-arrow">&rarr;</span>
+              </a>
+            </div>
+
+            <!-- Trust Badge Highlights matching the 3 flyer pillars -->
+            <div class="hero-trust-row">
+              <div class="trust-badge-item">
+                <div class="trust-check">🛡️</div>
+                <span>Reliable Service</span>
+              </div>
+              <div class="trust-badge-item">
+                <div class="trust-check">🤝</div>
+                <span>Affordable Rates</span>
+              </div>
+              <div class="trust-badge-item">
+                <div class="trust-check">👍</div>
+                <span>Quality Work You Can Count On</span>
+              </div>
+              <div class="trust-badge-item veteran-highlight">
+                <div class="trust-check">🎖️</div>
+                <span>Veterans &amp; Seniors Discount</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OVERLAPPING FLOATING QUOTE BAR -->
+      <div class="container quote-card-wrapper" id="quote-section">
+        <div class="quote-card">
+          <div class="quote-card-header">
+            <div class="quote-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z" />
+              </svg>
+              <span>GET A FREE PROPERTY MAINTENANCE QUOTE</span>
+            </div>
+            <span class="quote-header-note">Free Estimates &bull; Call 989-544-0791</span>
+          </div>
+
+          <form class="quote-form" id="home-quote-form">
+            <div class="form-inputs-grid">
+              <div class="input-field">
+                <input type="text" name="name" id="quote-name" placeholder="Full Name" required />
+              </div>
+              <div class="input-field">
+                <input type="email" name="email" id="quote-email" placeholder="Email Address" required />
+              </div>
+              <div class="input-field">
+                <input type="tel" name="phone" id="quote-phone" placeholder="Phone Number" required />
+              </div>
+              <div class="input-field">
+                <select name="service" id="quote-service" required>
+                  <option value="" disabled selected>Service Needed</option>
+                  <option value="lawn-care">Lawn Care (Mowing, Trimming, Edging)</option>
+                  <option value="snow-plowing">Snow Plowing (Driveways, Lots, Sidewalks)</option>
+                  <option value="debris-removal">Debris Removal (Branches, Brush, Yard Waste)</option>
+                  <option value="car-hauling">Car Hauling (Junk Cars, Non-Running)</option>
+                  <option value="cleanup">Spring / Fall Cleanup (Leaves, Property)</option>
+                  <option value="storm-damage">Storm Damage (Tree Removal, Emergency)</option>
+                </select>
+              </div>
+              <div class="input-field message-field">
+                <input type="text" name="message" id="quote-message" placeholder="Property Address / Project Details" required />
+              </div>
+              <div class="input-field submit-field">
+                <button type="submit" class="btn-pill-green quote-submit-btn">
+                  <span>GET FREE QUOTE</span>
+                  <span class="btn-arrow">&rarr;</span>
+                </button>
+              </div>
+            </div>
+            <div class="quote-form-status" id="quote-status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section">
+      <div class="container about-grid">
+        <!-- Left: Image Collage -->
+        <div class="about-collage">
+          <div class="about-img-main">
+            <img src={images.about1} alt="Elite Property Maintenance specialist mowing lawn" loading="lazy" />
+          </div>
+          <div class="about-img-secondary">
+            <img src={images.about2} alt="Professional lawn edging and hedge trimming" loading="lazy" />
+          </div>
+
+
+        </div>
+
+        <!-- Right: Text Content -->
+        <div class="about-text-content">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z" />
+            </svg>
+            <span>About Us</span>
+          </div>
+
+          <h2 class="section-title">
+            ABOUT ELITE PROPERTY MAINTENANCE<br />
+            <span class="text-accent">YOUR PROPERTY CARE EXPERTS</span>
+          </h2>
+
+          <p class="about-lead">
+            At Elite Property Maintenance, we are dedicated to providing professional, reliable, and affordable property maintenance solutions for commercial and residential properties throughout Central Michigan.
+          </p>
+
+          <p class="about-body">
+            As a proud veteran-owned and operated business, we hold ourselves to higher standards. From routine weekly lawn mowing and crisp perimeter edging to winter snow plowing, car hauling, and emergency storm clearing, we make sure your property always looks its absolute best.
+          </p>
+
+          <!-- Checkmark Bullets -->
+          <ul class="about-checklist">
+            <li>
+              <div class="check-circle">✓</div>
+              <span>Professional property care for both homes and businesses</span>
+            </li>
+            <li>
+              <div class="check-circle">✓</div>
+              <span>Expert mowing, trimming, and precision edging</span>
+            </li>
+            <li>
+              <div class="check-circle">✓</div>
+              <span>Reliable snow plowing for driveways, parking lots, and sidewalks</span>
+            </li>
+            <li>
+              <div class="check-circle">✓</div>
+              <span>Fast debris, brush, junk car hauling &amp; emergency storm damage response</span>
+            </li>
+            <li>
+              <div class="check-circle highlight">🎖️</div>
+              <span><strong>Veterans &amp; Seniors Discount:</strong> 20% off for qualifying veterans and seniors</span>
+            </li>
+          </ul>
+
+          <div class="about-cta-wrap">
+            <a href="/estimate" class="btn-pill-green">
+              <span>REQUEST YOUR FREE QUOTE</span>
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+            <a href="tel:989-544-0791" class="about-phone-link">
+              <span class="phone-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.64-3.97 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.97-8.64A2 2 0 018.1 5.24l3 3a2 2 0 01.21 2.97z"/></svg>
+              </span>
+              <div>
+                <span class="call-sub">Free Estimates &bull; Call</span>
+                <strong>989-544-0791</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE SERVICES SECTION (The 6 exact flyer services) -->
+    <section class="section services-section">
+      <div class="container">
+        <div class="services-header-row">
+          <div>
+            <div class="section-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z" />
+              </svg>
+              <span>Our Core Services</span>
+            </div>
+            <h2 class="section-title">EXPERT LAWN CARE &amp; PROPERTY SERVICES</h2>
+          </div>
+
+          <div class="services-nav-controls">
+            <a href="/services" class="btn-view-all">
+              <span>View All Services</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <!-- 1. LAWN CARE -->
+          <ServiceCard 
+            title="Lawn Care"
+            description="Complete turf care keeping residential and commercial lawns immaculate, clean, and perfectly striped."
+            imageSrc={images.lawnCare}
+            altText="Lawn mowing service in progress"
+            link="/services#lawn-care"
+            features={["Mowing", "Trimming", "Edging"]}
+            themeColor="green"
+            iconType="lawn"
+          />
+
+          <!-- 2. SNOW PLOWING -->
+          <ServiceCard 
+            title="Snow Plowing"
+            description="Reliable winter maintenance to keep your property safe, fully accessible, and hazard-free all winter."
+            imageSrc={images.snowPlow}
+            altText="Snow plowing truck clearing snow"
+            link="/services#snow-plowing"
+            features={["Driveways", "Parking Lots", "Sidewalks"]}
+            themeColor="blue"
+            iconType="snow"
+          />
+
+          <!-- 3. DEBRIS REMOVAL -->
+          <ServiceCard 
+            title="Debris Removal"
+            description="Comprehensive property clearing and haul-away service for organic and storm waste."
+            imageSrc={images.debris}
+            altText="Debris and branch removal"
+            link="/services#debris-removal"
+            features={["Branches", "Brush", "Yard Waste"]}
+            themeColor="emerald"
+            iconType="debris"
+          />
+
+          <!-- 4. CAR HAULING -->
+          <ServiceCard 
+            title="Car Hauling"
+            description="Professional flatbed vehicle removal and reliable equipment transport across Michigan."
+            imageSrc={images.carHaul}
+            altText="Car hauling trailer with vehicle"
+            link="/services#car-hauling"
+            features={["Junk Cars", "Non-Running", "Local & Long Distance"]}
+            themeColor="purple"
+            iconType="car"
+          />
+
+          <!-- 5. SPRING / FALL CLEANUP -->
+          <ServiceCard 
+            title="Spring / Fall Cleanup"
+            description="Seasonal preparation and thorough property cleanup keeping your turf healthy year-round."
+            imageSrc={images.cleanup}
+            altText="Autumn leaf cleanup"
+            link="/services#cleanup"
+            features={["Leaf Removal", "Brush Cleanup", "Property Cleanups"]}
+            themeColor="orange"
+            iconType="cleanup"
+          />
+
+          <!-- 6. STORM DAMAGE -->
+          <ServiceCard 
+            title="Storm Damage"
+            description="Rapid dispatch emergency service for fallen limbs, hazardous trees, and heavy storm debris."
+            imageSrc={images.stormDamage}
+            altText="Storm damage tree removal"
+            link="/services#storm-damage"
+            features={["Tree Removal", "Debris Cleanup", "Emergency Services"]}
+            themeColor="red"
+            iconType="storm"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP-BY-STEP / HOW IT WORKS SECTION -->
+    <section class="section how-it-works-section">
+      <div class="container how-grid">
+        <!-- Left: Pitch + Image -->
+        <div class="how-left">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z" />
+            </svg>
+            <span>How It Works</span>
+          </div>
+
+          <h2 class="section-title">
+            STEP-BY-STEP SERVICE<br />
+            WITH ELITE PROPERTY MAINTENANCE
+          </h2>
+
+          <p class="how-lead">
+            Our process is designed to keep your property healthy, clean, and beautifully maintained with minimal effort on your part.
+          </p>
+
+          <a href="/estimate" class="btn-pill-green how-btn">
+            <span>START YOUR SERVICE</span>
+            <span class="btn-arrow">&rarr;</span>
+          </a>
+
+          <div class="how-image-box">
+            <img src={images.howItWorks} alt="Technician working on lawn care" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Right: Vertical Timeline Steps -->
+        <div class="how-right">
+          <div class="steps-timeline">
+            <!-- Step 1 -->
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="marker-dot"></span>
+                <span class="marker-line"></span>
+              </div>
+              <div class="step-card">
+                <span class="step-pill">STEP 01</span>
+                <h3 class="step-title">REQUEST A FREE ESTIMATE</h3>
+                <p class="step-description">
+                  Simply contact us to share the details of your lawn or property and request a free estimate. We provide upfront, transparent pricing.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="marker-dot"></span>
+                <span class="marker-line"></span>
+              </div>
+              <div class="step-card">
+                <span class="step-pill">STEP 02</span>
+                <h3 class="step-title">SCHEDULE YOUR SERVICE</h3>
+                <p class="step-description">
+                  Choose a convenient date and time for our veteran-owned professional team to visit your property. We show up on time and ready to work.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="timeline-step">
+              <div class="step-marker">
+                <span class="marker-dot"></span>
+              </div>
+              <div class="step-card">
+                <span class="step-pill">STEP 03</span>
+                <h3 class="step-title">ENJOY A BEAUTIFUL PROPERTY</h3>
+                <p class="step-description">
+                  We perform expert lawn care, snow plowing, hauling, and cleanups, leaving your property pristine from your lawn to your driveway.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / GALLERY SECTION -->
+    <section class="section gallery-section">
+      <div class="container">
+        <div class="gallery-header text-center">
+          <div class="section-badge">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z" />
+            </svg>
+            <span>Our Project Gallery</span>
+          </div>
+          <h2 class="section-title">
+            OUR PORTFOLIO OF EXCELLENCE<br />
+            <span class="text-accent">CREATING PRISTINE OUTDOOR DESIGNS</span>
+          </h2>
+          <p class="gallery-subtitle">
+            Take a look at some of our recent residential mowing, commercial snow clearing, and cleanup work.
+          </p>
+        </div>
+
+        <div class="gallery-bento-grid">
+          <div class="gallery-item item-1">
+            <img src={images.gallery1} alt="Clean striping lawn mowing project" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-cat">Lawn Care</span>
+              <h4 class="gallery-name">Precision Striped Turf</h4>
+            </div>
+          </div>
+          <div class="gallery-item item-2">
+            <img src={images.gallery2} alt="Commercial property lawn maintenance" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-cat">Lawn Care &amp; Trimming</span>
+              <h4 class="gallery-name">Corporate Grounds Care</h4>
+            </div>
+          </div>
+          <div class="gallery-item item-3">
+            <img src={images.gallery3} alt="Sidewalk edging and clean lines" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-cat">Edging &amp; Trimming</span>
+              <h4 class="gallery-name">Crisp Perimeter Edging</h4>
+            </div>
+          </div>
+          <div class="gallery-item item-4">
+            <img src={images.gallery4} alt="Residential estate curb appeal" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-cat">Seasonal Cleanup</span>
+              <h4 class="gallery-name">Complete Property Cleanup</h4>
+            </div>
+          </div>
+          <div class="gallery-item item-5">
+            <img src={images.gallery5} alt="Hauling and debris cleanup" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-cat">Debris Removal</span>
+              <h4 class="gallery-name">Property Brush Clearing</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-cta text-center">
+          <a href="/projects" class="btn-pill-green">
+            <span>EXPLORE FULL PROJECT GALLERY</span>
+            <span class="btn-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VETERAN DISCOUNT PROMO BANNER -->
+    <section class="veteran-promo-section">
+      <div class="container veteran-promo-inner">
+        <div class="promo-badge-tag">🎖️ VETERANS &amp; SENIORS DISCOUNT</div>
+        <h2 class="promo-title">THANK YOU FOR YOUR SERVICE!</h2>
+        <p class="promo-text">
+          Elite Property Maintenance LLC is proud to be veteran owned and operated. We offer a 20% discount on all regular property maintenance services for military veterans and senior citizens.
+        </p>
+        <div class="promo-actions">
+          <a href="/estimate" class="btn-pill-white">Claim Your 20% Discount &rarr;</a>
+          <a href="tel:989-544-0791" class="promo-call-link">
+            <span>Call Today:</span>
+            <strong>989-544-0791</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* ===================== HERO SECTION ===================== */
+  .hero-wrap {
+    position: relative;
+    background-color: var(--color-primary-dark);
+    margin-bottom: 90px;
+  }
+
+  .hero-bg {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 90px 0 160px;
+    position: relative;
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-content {
+    max-width: 860px;
+  }
+
+  .hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 18px;
+    border-radius: var(--radius-full);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 22px;
+  }
+
+  .hero-pill svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-accent-light);
+  }
+
+  .hero-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(34px, 5.2vw, 56px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+  }
+
+  .hero-subheading {
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 34px;
+    max-width: 740px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+
+  .btn-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .btn-pill-green:hover .btn-arrow,
+  .btn-pill-white:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+
+  .hero-trust-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .trust-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .trust-badge-item.veteran-highlight {
+    color: #ff9b9b;
+  }
+
+  .trust-check {
+    font-size: 16px;
+  }
+
+  /* ===================== FLOATING QUOTE BAR ===================== */
+  .quote-card-wrapper {
+    position: relative;
+    margin-top: -100px;
+    z-index: 10;
+  }
+
+  .quote-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    padding: 30px 36px;
+    border: 1px solid var(--color-card-border);
+  }
+
+  .quote-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .quote-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .quote-badge svg {
+    width: 22px;
+    height: 22px;
+    color: var(--color-accent);
+  }
+
+  .quote-header-note {
+    font-size: 13px;
+    color: var(--color-accent);
+    font-weight: 800;
+  }
+
+  .form-inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .input-field input,
+  .input-field select {
+    width: 100%;
+    height: 52px;
+    padding: 0 18px;
+    background-color: #f6f8f5;
+    border: 1px solid #e1e8df;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    color: var(--color-text);
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  .input-field input:focus,
+  .input-field select:focus {
+    background-color: #ffffff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(90, 164, 40, 0.15);
+  }
+
+  .message-field {
+    grid-column: span 2;
+  }
+
+  .submit-field {
+    grid-column: span 1;
+  }
+
+  .quote-submit-btn {
+    width: 100%;
+    height: 52px;
+    padding: 0 20px;
+    font-size: 15px;
+    border-radius: var(--radius-md);
+  }
+
+  .quote-form-status {
+    margin-top: 12px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+  }
+
+  .quote-form-status.success {
+    display: block;
+    background-color: #eaf7e6;
+    color: #216113;
+    border: 1px solid #c7e8bd;
+  }
+
+  /* ===================== UNIVERSAL SECTION STYLES ===================== */
+  .section {
+    padding: 85px 0;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 3.8vw, 42px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  /* ===================== ABOUT SECTION ===================== */
+  .about-section {
+    background-color: var(--color-white);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-collage {
+    position: relative;
+    display: flex;
+    gap: 20px;
+  }
+
+  .about-img-main {
+    width: 58%;
+    height: 480px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .about-img-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-img-secondary {
+    width: 42%;
+    height: 380px;
+    margin-top: 60px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .about-img-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .about-lead {
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: 14px;
+  }
+
+  .about-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 24px;
+  }
+
+  .about-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 34px;
+  }
+
+  .about-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    color: var(--color-text);
+  }
+
+  .check-circle {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--color-badge-bg);
+    border: 1px solid var(--color-badge-border);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .check-circle.highlight {
+    background-color: #fef2f2;
+    border-color: #fecaca;
+    font-size: 13px;
+  }
+
+  .about-cta-wrap {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+
+  .about-phone-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--color-primary);
+  }
+
+  .phone-circle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--color-badge-bg);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .about-phone-link:hover .phone-circle {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .phone-circle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .call-sub {
+    display: block;
+    font-size: 12px;
+    color: var(--color-text-subtle);
+  }
+
+  .about-phone-link strong {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    color: var(--color-primary);
+  }
+
+  /* ===================== SERVICES SECTION ===================== */
+  .services-section {
+    background-color: var(--color-bg-light);
+  }
+
+  .services-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .btn-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--color-accent);
+    padding: 10px 18px;
+    border-radius: var(--radius-full);
+    background: #ffffff;
+    border: 1px solid var(--color-card-border);
+  }
+
+  .btn-view-all:hover {
+    background: var(--color-accent);
+    color: #ffffff;
+    border-color: var(--color-accent);
+  }
+
+  .btn-view-all svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  /* ===================== HOW IT WORKS SECTION ===================== */
+  .how-it-works-section {
+    background-color: var(--color-white);
+  }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .how-lead {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 26px;
+  }
+
+  .how-btn {
+    margin-bottom: 34px;
+  }
+
+  .how-image-box {
+    width: 100%;
+    height: 320px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .how-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Timeline Steps */
+  .steps-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-top: 10px;
+  }
+
+  .timeline-step {
+    display: flex;
+    gap: 24px;
+    position: relative;
+  }
+
+  .step-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 24px;
+    flex-shrink: 0;
+  }
+
+  .marker-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 0 4px var(--color-badge-bg);
+    margin-top: 6px;
+  }
+
+  .marker-line {
+    position: absolute;
+    top: 26px;
+    bottom: -32px;
+    width: 2px;
+    background-color: #dbe8d8;
+  }
+
+  .step-card {
+    background-color: var(--color-bg-light);
+    border: 1px solid var(--color-card-border);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    flex-grow: 1;
+    transition: all 0.25s ease;
+  }
+
+  .step-card:hover {
+    background-color: #ffffff;
+    border-color: #c5dfbe;
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+  }
+
+  .step-pill {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+  }
+
+  .step-title {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+  }
+
+  .step-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+
+  /* ===================== GALLERY SECTION ===================== */
+  .gallery-section {
+    background-color: var(--color-bg-light);
+  }
+
+  .gallery-header {
+    max-width: 680px;
+    margin: 0 auto 46px;
+  }
+
+  .gallery-subtitle {
+    font-size: 16px;
+    color: var(--color-text-muted);
+    margin-top: 10px;
+  }
+
+  .gallery-bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 240px;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .gallery-item {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.08);
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 36, 14, 0.9) 0%, rgba(15, 36, 14, 0.1) 70%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+  .gallery-cat {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-accent-light);
+    margin-bottom: 4px;
+  }
+
+  .gallery-name {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .item-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .item-2 {
+    grid-column: span 2;
+  }
+
+  .item-3 {
+    grid-column: span 1;
+  }
+
+  .item-4 {
+    grid-column: span 1;
+  }
+
+  .item-5 {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+
+  /* ===================== VETERAN PROMO BANNER ===================== */
+  .veteran-promo-section {
+    background: linear-gradient(135deg, #163614 0%, #0d210c 100%);
+    color: #ffffff;
+    padding: 70px 0;
+    position: relative;
+    border-top: 4px solid var(--color-accent);
+  }
+
+  .veteran-promo-inner {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .promo-badge-tag {
+    display: inline-block;
+    background: rgba(201, 42, 42, 0.25);
+    border: 1px solid rgba(201, 42, 42, 0.6);
+    color: #ff9b9b;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    padding: 6px 18px;
+    border-radius: var(--radius-full);
+    margin-bottom: 18px;
+  }
+
+  .promo-title {
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .promo-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+  }
+
+  .promo-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .promo-call-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 15px;
+  }
+
+  .promo-call-link span {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .promo-call-link strong {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    color: var(--color-accent-light);
+  }
+
+  /* ===================== RESPONSIVE BREAKPOINTS ===================== */
+  @media (max-width: 1024px) {
+    .about-grid,
+    .how-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .about-collage {
+      justify-content: center;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-inputs-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .message-field {
+      grid-column: span 2;
+    }
+
+    .submit-field {
+      grid-column: span 2;
+    }
+
+    .gallery-bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .item-1 {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+
+    .item-5 {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-bg {
+      padding: 60px 0 130px;
+    }
+
+    .quote-card {
+      padding: 24px 20px;
+    }
+
+    .form-inputs-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .message-field,
+    .submit-field {
+      grid-column: span 1;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-collage {
+      flex-direction: column;
+    }
+
+    .about-img-main,
+    .about-img-secondary {
+      width: 100%;
+      height: 280px;
+      margin-top: 0;
+    }
+
+    .about-circular-badge {
+      display: none;
+    }
+
+    .gallery-bento-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .item-1, .item-2, .item-3, .item-4, .item-5 {
+      grid-column: span 1;
+    }
+  }
+</style>
+
+<script>
+  // Interactive client-side quote submission simulation
+  const quoteForm = document.getElementById('home-quote-form') as HTMLFormElement;
+  const quoteStatus = document.getElementById('quote-status');
+
+  if (quoteForm && quoteStatus) {
+    quoteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(quoteForm);
+      const name = formData.get('name');
+      const phone = formData.get('phone');
+      const service = formData.get('service');
+
+      quoteStatus.className = 'quote-form-status success';
+      quoteStatus.innerHTML = `<strong>Thank you, ${name}!</strong> Your request for <em>${service || 'property maintenance'}</em> has been received. Our team will contact you at <strong>${phone}</strong> within 24 hours.`;
+      quoteForm.reset();
+    });
+  }
+</script>
