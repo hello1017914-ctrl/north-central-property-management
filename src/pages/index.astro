@@ -4,31 +4,28 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 
-// Local high-fidelity generated images
+// Local high-fidelity images
 const images = {
   hero: "/images/hero.jpg",
   about1: "/images/about-main.jpg",
   about2: "/images/about-secondary.jpg",
   howItWorks: "/images/service-lawn-care.jpg",
-  // The 6 exact flyer services
+  // The 4 exact flyer services
   lawnCare: "/images/service-lawn-care.jpg",
-  snowPlow: "/images/service-snow-plow.jpg",
-  debris: "/images/service-debris.jpg",
-  carHaul: "/images/service-car-haul.jpg",
   cleanup: "/images/service-cleanup.jpg",
-  stormDamage: "/images/service-storm-damage.jpg",
+  gutterCleaning: "/images/gutter-cleaning.jpg",
+  animalDamage: "/images/animal-damage-control.jpg",
   // Gallery
   gallery1: "/images/service-lawn-care.jpg",
-  gallery2: "/images/service-snow-plow.jpg",
-  gallery3: "/images/service-debris.jpg",
-  gallery4: "/images/service-cleanup.jpg",
-  gallery5: "/images/service-car-haul.jpg",
+  gallery2: "/images/gutter-cleaning.jpg",
+  gallery3: "/images/service-cleanup.jpg",
+  gallery4: "/images/animal-damage-control.jpg",
 };
 ---
 
 <Layout 
-  title="Elite Property Maintenance LLC | Keeping Your Property Looking Its Best"
-  description="From your lawn to your driveway... we do it all! Veteran owned & operated lawn care, snow plowing, debris removal, car hauling, cleanups & storm damage. Call 989-544-0791."
+  title="North Central Property Management | Lawn Care, Cleanups, Gutter Cleaning & Animal Damage Control"
+  description="North Central Property Management provides expert lawn care, spring/fall cleanups, gutter cleaning, and animal damage control. Call (989) 259-8499 for a free estimate."
 >
   <Header currentPage="home" />
 
@@ -43,17 +40,17 @@ const images = {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
               </svg>
-              <span>VETERAN OWNED &amp; OPERATED &bull; KEEPING YOUR PROPERTY LOOKING ITS BEST</span>
+              <span>NORTH CENTRAL PROPERTY MANAGEMENT &bull; QUALITY WORK YOU CAN COUNT ON</span>
             </div>
 
             <!-- Big Bold Punchy Headline -->
             <h1 class="hero-headline">
-              FROM YOUR LAWN TO YOUR DRIVEWAY... WE DO IT ALL!
+              COMPLETE PROPERTY CARE &amp; EXTERIOR MAINTENANCE SOLUTIONS
             </h1>
 
             <!-- Subheading / Copy -->
             <p class="hero-subheading">
-              At Elite Property Maintenance LLC, we deliver dependable and affordable outdoor maintenance solutions tailored to residential and commercial properties throughout Central Michigan.
+              At North Central Property Management, we deliver dependable, professional outdoor care tailored to residential and commercial properties throughout Central Michigan. From lush lawn care and seasonal cleanups to thorough gutter cleaning and animal damage control.
             </p>
 
             <!-- Hero Action Buttons -->
@@ -62,16 +59,16 @@ const images = {
                 <span>REQUEST YOUR FREE QUOTE</span>
                 <span class="btn-arrow">&rarr;</span>
               </a>
-              <a href="/contact" class="btn-pill-white">
-                <span>CONTACT US TODAY</span>
+              <a href="tel:989-259-8499" class="btn-pill-white">
+                <span>CALL (989) 259-8499</span>
                 <span class="btn-arrow">&rarr;</span>
               </a>
             </div>
 
-            <!-- Trust Badge Highlights matching the 3 flyer pillars -->
+            <!-- Trust Badge Highlights matching the flyer pillars -->
             <div class="hero-trust-row">
               <div class="trust-badge-item">
-                <div class="trust-check">🛡️</div>
+                <div class="trust-check">🌲</div>
                 <span>Reliable Service</span>
               </div>
               <div class="trust-badge-item">
@@ -83,8 +80,8 @@ const images = {
                 <span>Quality Work You Can Count On</span>
               </div>
               <div class="trust-badge-item veteran-highlight">
-                <div class="trust-check">🎖️</div>
-                <span>Veterans &amp; Seniors Discount</span>
+                <div class="trust-check">📞</div>
+                <span>Free Estimates</span>
               </div>
             </div>
           </div>
@@ -99,9 +96,9 @@ const images = {
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z" />
               </svg>
-              <span>GET A FREE PROPERTY MAINTENANCE QUOTE</span>
+              <span>GET A FREE PROPERTY MANAGEMENT QUOTE</span>
             </div>
-            <span class="quote-header-note">Free Estimates &bull; Call 989-544-0791</span>
+            <span class="quote-header-note">Free Estimates &bull; Call (989) 259-8499</span>
           </div>
 
           <form class="quote-form" id="home-quote-form">
@@ -119,11 +116,9 @@ const images = {
                 <select name="service" id="quote-service" required>
                   <option value="" disabled selected>Service Needed</option>
                   <option value="lawn-care">Lawn Care (Mowing, Trimming, Edging)</option>
-                  <option value="snow-plowing">Snow Plowing (Driveways, Lots, Sidewalks)</option>
-                  <option value="debris-removal">Debris Removal (Branches, Brush, Yard Waste)</option>
-                  <option value="car-hauling">Car Hauling (Junk Cars, Non-Running)</option>
-                  <option value="cleanup">Spring / Fall Cleanup (Leaves, Property)</option>
-                  <option value="storm-damage">Storm Damage (Tree Removal, Emergency)</option>
+                  <option value="cleanup">Spring / Fall Clean Up</option>
+                  <option value="gutter-cleaning">Gutter Cleaning (Debris &amp; Downspouts)</option>
+                  <option value="animal-damage-control">Animal Damage Control &amp; Exclusion</option>
                 </select>
               </div>
               <div class="input-field message-field">
@@ -148,13 +143,11 @@ const images = {
         <!-- Left: Image Collage -->
         <div class="about-collage">
           <div class="about-img-main">
-            <img src={images.about1} alt="Elite Property Maintenance specialist mowing lawn" loading="lazy" />
+            <img src={images.about1} alt="North Central Property Management specialist mowing lawn" loading="lazy" />
           </div>
           <div class="about-img-secondary">
-            <img src={images.about2} alt="Professional lawn edging and hedge trimming" loading="lazy" />
+            <img src={images.about2} alt="Professional lawn edging and property care" loading="lazy" />
           </div>
-
-
         </div>
 
         <!-- Right: Text Content -->
@@ -167,39 +160,39 @@ const images = {
           </div>
 
           <h2 class="section-title">
-            ABOUT ELITE PROPERTY MAINTENANCE<br />
-            <span class="text-accent">YOUR PROPERTY CARE EXPERTS</span>
+            ABOUT NORTH CENTRAL PROPERTY MANAGEMENT<br />
+            <span class="text-accent">YOUR TRUSTED OUTDOOR SPECIALISTS</span>
           </h2>
 
           <p class="about-lead">
-            At Elite Property Maintenance, we are dedicated to providing professional, reliable, and affordable property maintenance solutions for commercial and residential properties throughout Central Michigan.
+            At North Central Property Management, we are dedicated to providing reliable, affordable, and high-quality property maintenance solutions for homeowners, landlords, and commercial properties throughout Central Michigan.
           </p>
 
           <p class="about-body">
-            As a proud veteran-owned and operated business, we hold ourselves to higher standards. From routine weekly lawn mowing and crisp perimeter edging to winter snow plowing, car hauling, and emergency storm clearing, we make sure your property always looks its absolute best.
+            From precision weekly lawn mowing and seasonal spring and fall cleanups to thorough gutter cleaning and humane animal damage control &amp; repair, we keep your property well-protected and looking its absolute best in every season.
           </p>
 
           <!-- Checkmark Bullets -->
           <ul class="about-checklist">
             <li>
               <div class="check-circle">✓</div>
-              <span>Professional property care for both homes and businesses</span>
+              <span><strong>Lawn Care:</strong> Precision mowing, clean edging, and trimming</span>
             </li>
             <li>
               <div class="check-circle">✓</div>
-              <span>Expert mowing, trimming, and precision edging</span>
+              <span><strong>Spring / Fall Clean Up:</strong> Complete leaf removal, bed cleanup, and seasonal prep</span>
             </li>
             <li>
               <div class="check-circle">✓</div>
-              <span>Reliable snow plowing for driveways, parking lots, and sidewalks</span>
+              <span><strong>Gutter Cleaning:</strong> Debris removal, downspout flushing, and overflow prevention</span>
             </li>
             <li>
               <div class="check-circle">✓</div>
-              <span>Fast debris, brush, junk car hauling &amp; emergency storm damage response</span>
+              <span><strong>Animal Damage Control:</strong> Entry repairs, humane wildlife exclusion, and damage prevention</span>
             </li>
             <li>
-              <div class="check-circle highlight">🎖️</div>
-              <span><strong>Veterans &amp; Seniors Discount:</strong> 20% off for qualifying veterans and seniors</span>
+              <div class="check-circle highlight">⭐</div>
+              <span><strong>Customer Commitment:</strong> Prompt communication, fair pricing, and 100% satisfaction guaranteed</span>
             </li>
           </ul>
 
@@ -208,13 +201,13 @@ const images = {
               <span>REQUEST YOUR FREE QUOTE</span>
               <span class="btn-arrow">&rarr;</span>
             </a>
-            <a href="tel:989-544-0791" class="about-phone-link">
+            <a href="tel:989-259-8499" class="about-phone-link">
               <span class="phone-circle">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.64-3.97 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.97-8.64A2 2 0 018.1 5.24l3 3a2 2 0 01.21 2.97z"/></svg>
               </span>
               <div>
                 <span class="call-sub">Free Estimates &bull; Call</span>
-                <strong>989-544-0791</strong>
+                <strong>(989) 259-8499</strong>
               </div>
             </a>
           </div>
@@ -222,7 +215,7 @@ const images = {
       </div>
     </section>
 
-    <!-- CORE SERVICES SECTION (The 6 exact flyer services) -->
+    <!-- CORE SERVICES SECTION -->
     <section class="section services-section">
       <div class="container">
         <div class="services-header-row">
@@ -233,7 +226,7 @@ const images = {
               </svg>
               <span>Our Core Services</span>
             </div>
-            <h2 class="section-title">EXPERT LAWN CARE &amp; PROPERTY SERVICES</h2>
+            <h2 class="section-title">EXPERT PROPERTY CARE &amp; MAINTENANCE</h2>
           </div>
 
           <div class="services-nav-controls">
@@ -248,73 +241,49 @@ const images = {
           <!-- 1. LAWN CARE -->
           <ServiceCard 
             title="Lawn Care"
-            description="Complete turf care keeping residential and commercial lawns immaculate, clean, and perfectly striped."
+            description="Complete turf care keeping residential and commercial lawns immaculate, healthy, and sharp all season."
             imageSrc={images.lawnCare}
             altText="Lawn mowing service in progress"
             link="/services#lawn-care"
-            features={["Mowing", "Trimming", "Edging"]}
+            features={["Precision Mowing", "Perimeter Trimming", "Walkway Edging"]}
             themeColor="green"
             iconType="lawn"
           />
 
-          <!-- 2. SNOW PLOWING -->
+          <!-- 2. SPRING / FALL CLEAN UP -->
           <ServiceCard 
-            title="Snow Plowing"
-            description="Reliable winter maintenance to keep your property safe, fully accessible, and hazard-free all winter."
-            imageSrc={images.snowPlow}
-            altText="Snow plowing truck clearing snow"
-            link="/services#snow-plowing"
-            features={["Driveways", "Parking Lots", "Sidewalks"]}
-            themeColor="blue"
-            iconType="snow"
-          />
-
-          <!-- 3. DEBRIS REMOVAL -->
-          <ServiceCard 
-            title="Debris Removal"
-            description="Comprehensive property clearing and haul-away service for organic and storm waste."
-            imageSrc={images.debris}
-            altText="Debris and branch removal"
-            link="/services#debris-removal"
-            features={["Branches", "Brush", "Yard Waste"]}
-            themeColor="emerald"
-            iconType="debris"
-          />
-
-          <!-- 4. CAR HAULING -->
-          <ServiceCard 
-            title="Car Hauling"
-            description="Professional flatbed vehicle removal and reliable equipment transport across Michigan."
-            imageSrc={images.carHaul}
-            altText="Car hauling trailer with vehicle"
-            link="/services#car-hauling"
-            features={["Junk Cars", "Non-Running", "Local & Long Distance"]}
-            themeColor="purple"
-            iconType="car"
-          />
-
-          <!-- 5. SPRING / FALL CLEANUP -->
-          <ServiceCard 
-            title="Spring / Fall Cleanup"
-            description="Seasonal preparation and thorough property cleanup keeping your turf healthy year-round."
+            title="Spring / Fall Clean Up"
+            description="Thorough seasonal cleanup, leaf vacuuming, yard waste hauling, and bed preparation for optimal property health."
             imageSrc={images.cleanup}
-            altText="Autumn leaf cleanup"
+            altText="Spring and fall cleanup with leaves and raking"
             link="/services#cleanup"
             features={["Leaf Removal", "Brush Cleanup", "Property Cleanups"]}
             themeColor="orange"
             iconType="cleanup"
           />
 
-          <!-- 6. STORM DAMAGE -->
+          <!-- 3. GUTTER CLEANING -->
           <ServiceCard 
-            title="Storm Damage"
-            description="Rapid dispatch emergency service for fallen limbs, hazardous trees, and heavy storm debris."
-            imageSrc={images.stormDamage}
-            altText="Storm damage tree removal"
-            link="/services#storm-damage"
-            features={["Tree Removal", "Debris Cleanup", "Emergency Services"]}
-            themeColor="red"
-            iconType="storm"
+            title="Gutter Cleaning"
+            description="Professional gutter and downspout cleaning preventing water pooling, roof rot, and foundation seepage."
+            imageSrc={images.gutterCleaning}
+            altText="Technician cleaning gutters safely"
+            link="/services#gutter-cleaning"
+            features={["Debris Removal", "Downspout Clearing", "Water Flow Testing"]}
+            themeColor="blue"
+            iconType="snow"
+          />
+
+          <!-- 4. ANIMAL DAMAGE CONTROL -->
+          <ServiceCard 
+            title="Animal Damage Control"
+            description="Humane wildlife exclusion, soffit and fascia repairs, and entry prevention against raccoons, rodents, and pests."
+            imageSrc={images.animalDamage}
+            altText="Animal damage repair and wildlife exclusion"
+            link="/services#animal-damage-control"
+            features={["Humane Exclusion", "Damage Repair", "Barrier Installation"]}
+            themeColor="emerald"
+            iconType="debris"
           />
         </div>
       </div>
@@ -334,11 +303,11 @@ const images = {
 
           <h2 class="section-title">
             STEP-BY-STEP SERVICE<br />
-            WITH ELITE PROPERTY MAINTENANCE
+            WITH NORTH CENTRAL PROPERTY MANAGEMENT
           </h2>
 
           <p class="how-lead">
-            Our process is designed to keep your property healthy, clean, and beautifully maintained with minimal effort on your part.
+            Our process is simple and hassle-free, ensuring your property stays clean, safe, and beautiful without unexpected complications.
           </p>
 
           <a href="/estimate" class="btn-pill-green how-btn">
@@ -379,7 +348,7 @@ const images = {
                 <span class="step-pill">STEP 02</span>
                 <h3 class="step-title">SCHEDULE YOUR SERVICE</h3>
                 <p class="step-description">
-                  Choose a convenient date and time for our veteran-owned professional team to visit your property. We show up on time and ready to work.
+                  Choose a convenient date and time for our professional team to visit your property. We arrive promptly and ready to work.
                 </p>
               </div>
             </div>
@@ -393,7 +362,7 @@ const images = {
                 <span class="step-pill">STEP 03</span>
                 <h3 class="step-title">ENJOY A BEAUTIFUL PROPERTY</h3>
                 <p class="step-description">
-                  We perform expert lawn care, snow plowing, hauling, and cleanups, leaving your property pristine from your lawn to your driveway.
+                  We perform expert lawn care, seasonal cleanups, gutter clearing, and animal exclusion, leaving your property immaculate.
                 </p>
               </div>
             </div>
@@ -414,10 +383,10 @@ const images = {
           </div>
           <h2 class="section-title">
             OUR PORTFOLIO OF EXCELLENCE<br />
-            <span class="text-accent">CREATING PRISTINE OUTDOOR DESIGNS</span>
+            <span class="text-accent">QUALITY WORK YOU CAN COUNT ON</span>
           </h2>
           <p class="gallery-subtitle">
-            Take a look at some of our recent residential mowing, commercial snow clearing, and cleanup work.
+            Take a look at some of our recent lawn care, gutter clearing, animal damage repair, and cleanup work.
           </p>
         </div>
 
@@ -430,31 +399,24 @@ const images = {
             </div>
           </div>
           <div class="gallery-item item-2">
-            <img src={images.gallery2} alt="Commercial property lawn maintenance" loading="lazy" />
+            <img src={images.gallery2} alt="Gutter cleaning and debris removal" loading="lazy" />
             <div class="gallery-overlay">
-              <span class="gallery-cat">Lawn Care &amp; Trimming</span>
-              <h4 class="gallery-name">Corporate Grounds Care</h4>
+              <span class="gallery-cat">Gutter Cleaning</span>
+              <h4 class="gallery-name">Downspout &amp; Eaves Clearing</h4>
             </div>
           </div>
           <div class="gallery-item item-3">
-            <img src={images.gallery3} alt="Sidewalk edging and clean lines" loading="lazy" />
+            <img src={images.gallery3} alt="Spring and fall cleanup leaves and yard waste" loading="lazy" />
             <div class="gallery-overlay">
-              <span class="gallery-cat">Edging &amp; Trimming</span>
-              <h4 class="gallery-name">Crisp Perimeter Edging</h4>
+              <span class="gallery-cat">Seasonal Cleanup</span>
+              <h4 class="gallery-name">Complete Leaf &amp; Yard Cleanup</h4>
             </div>
           </div>
           <div class="gallery-item item-4">
-            <img src={images.gallery4} alt="Residential estate curb appeal" loading="lazy" />
+            <img src={images.gallery4} alt="Animal damage repair and humane exclusion" loading="lazy" />
             <div class="gallery-overlay">
-              <span class="gallery-cat">Seasonal Cleanup</span>
-              <h4 class="gallery-name">Complete Property Cleanup</h4>
-            </div>
-          </div>
-          <div class="gallery-item item-5">
-            <img src={images.gallery5} alt="Hauling and debris cleanup" loading="lazy" />
-            <div class="gallery-overlay">
-              <span class="gallery-cat">Debris Removal</span>
-              <h4 class="gallery-name">Property Brush Clearing</h4>
+              <span class="gallery-cat">Animal Damage Control</span>
+              <h4 class="gallery-name">Humane Wildlife Exclusion &amp; Repair</h4>
             </div>
           </div>
         </div>
@@ -468,19 +430,19 @@ const images = {
       </div>
     </section>
 
-    <!-- VETERAN DISCOUNT PROMO BANNER -->
+    <!-- PROMO BANNER -->
     <section class="veteran-promo-section">
       <div class="container veteran-promo-inner">
-        <div class="promo-badge-tag">🎖️ VETERANS &amp; SENIORS DISCOUNT</div>
-        <h2 class="promo-title">THANK YOU FOR YOUR SERVICE!</h2>
+        <div class="promo-badge-tag">🌲 FREE ESTIMATES &bull; RELIABLE SERVICE</div>
+        <h2 class="promo-title">READY TO ENHANCE YOUR PROPERTY?</h2>
         <p class="promo-text">
-          Elite Property Maintenance LLC is proud to be veteran owned and operated. We offer a 20% discount on all regular property maintenance services for military veterans and senior citizens.
+          North Central Property Management delivers quality work you can count on. Contact us today for your free estimate on lawn care, cleanups, gutter cleaning, or wildlife damage repairs.
         </p>
         <div class="promo-actions">
-          <a href="/estimate" class="btn-pill-white">Claim Your 20% Discount &rarr;</a>
-          <a href="tel:989-544-0791" class="promo-call-link">
+          <a href="/estimate" class="btn-pill-white">Request Free Estimate &rarr;</a>
+          <a href="tel:989-259-8499" class="promo-call-link">
             <span>Call Today:</span>
-            <strong>989-544-0791</strong>
+            <strong>(989) 259-8499</strong>
           </a>
         </div>
       </div>
@@ -1052,82 +1014,14 @@ const images = {
 
   .gallery-bento-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 240px;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 280px;
+    gap: 24px;
     margin-bottom: 40px;
   }
 
-  .gallery-item {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    cursor: pointer;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-
-  .gallery-item:hover img {
-    transform: scale(1.08);
-  }
-
-  .gallery-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(15, 36, 14, 0.9) 0%, rgba(15, 36, 14, 0.1) 70%, transparent 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .gallery-item:hover .gallery-overlay {
-    opacity: 1;
-  }
-
-  .gallery-cat {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--color-accent-light);
-    margin-bottom: 4px;
-  }
-
-  .gallery-name {
-    font-family: var(--font-heading);
-    font-size: 16px;
-    font-weight: 700;
-    color: #ffffff;
-  }
-
-  .item-1 {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-
-  .item-2 {
-    grid-column: span 2;
-  }
-
-  .item-3 {
+  .item-1, .item-2, .item-3, .item-4 {
     grid-column: span 1;
-  }
-
-  .item-4 {
-    grid-column: span 1;
-  }
-
-  .item-5 {
-    grid-column: span 4;
     grid-row: span 1;
   }
 

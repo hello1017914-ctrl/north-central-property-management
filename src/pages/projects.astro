@@ -9,49 +9,35 @@ const projects = [
     category: "lawn",
     categoryLabel: "Lawn Care",
     image: "/images/service-lawn-care.jpg",
-    desc: "Complete weekly mowing, clean edge trimming against hardscape, and high-velocity debris blowing for a pristine estate lawn."
+    desc: "Weekly precision mowing, razor-sharp perimeter edging against hardscape, and walkway debris blowing for a pristine estate lawn."
   },
   {
-    title: "Commercial Retail Parking Lot & Sidewalk Snow Clearing",
-    category: "snow",
-    categoryLabel: "Snow Plowing",
-    image: "/images/service-snow-plow.jpg",
-    desc: "24/7 overnight plowing and eco-friendly salt application ensuring clear lanes and safe customer parking during major snowfall."
-  },
-  {
-    title: "Downed Branches & Brush Haul-Away",
-    category: "debris",
-    categoryLabel: "Debris Removal",
-    image: "/images/service-debris.jpg",
-    desc: "Heavy utility trailer loaded with overgrown brush, tree limbs, and yard waste hauled away completely from a residential perimeter."
-  },
-  {
-    title: "Non-Running Vehicle Haul & Lot Clearance",
-    category: "hauling",
-    categoryLabel: "Car Hauling",
-    image: "/images/service-car-haul.jpg",
-    desc: "Safe winching and flatbed transport of non-running scrap vehicle, clearing space on a rural residential driveway."
-  },
-  {
-    title: "Seasonal Fall Leaf Removal & Property Cleanup",
+    title: "Seasonal Fall Leaf Removal & Yard Cleanup",
     category: "cleanup",
-    categoryLabel: "Spring / Fall Cleanup",
+    categoryLabel: "Spring / Fall Clean Up",
     image: "/images/service-cleanup.jpg",
-    desc: "Thorough multi-stage leaf vacuuming, garden bed dead-heading, soil aeration, and winterization for a 2-acre estate."
+    desc: "Deep seasonal leaf raking, yard waste haul-away, flower bed edging refresh, and perennial cutbacks."
   },
   {
-    title: "Emergency Fallen Tree Removal & Storm Restoration",
-    category: "storm",
-    categoryLabel: "Storm Damage",
-    image: "/images/service-storm-damage.jpg",
-    desc: "Immediate emergency response to chainsaw a massive fallen oak trunk blocking a driveway and clear all hazardous debris."
+    title: "Eaves & Downspout Debris Extraction",
+    category: "gutters",
+    categoryLabel: "Gutter Cleaning",
+    image: "/images/gutter-cleaning.jpg",
+    desc: "Complete hand removal of pine needles, leaves, and sludge, followed by pressure flushing all downspouts for smooth water drainage."
+  },
+  {
+    title: "Soffit Exclusion & Wildlife Damage Restoration",
+    category: "animal",
+    categoryLabel: "Animal Damage Control",
+    image: "/images/animal-damage-control.jpg",
+    desc: "Humane exclusion screening, replacement of raccoon-damaged fascia boards, and perimeter reinforcement to prevent entry."
   }
 ];
 ---
 
 <Layout 
-  title="Our Projects & Portfolio | Elite Property Maintenance LLC"
-  description="Explore our recent lawn care, snow plowing, debris removal, car hauling, cleanups, and storm damage work across Central Michigan. Quality work you can count on."
+  title="Our Projects & Portfolio | North Central Property Management"
+  description="Explore our recent lawn care, seasonal cleanups, gutter cleaning, and animal damage repair work across Central Michigan. Quality work you can count on."
 >
   <Header currentPage="projects" />
 
@@ -65,7 +51,7 @@ const projects = [
         </div>
         <h1 class="page-hero-title">OUR PORTFOLIO OF EXCELLENCE</h1>
         <p class="page-hero-subtitle">
-          From your lawn to your driveway... we do it all! Browse our recent lawn care, snow plowing, hauling, and cleanup projects in Central Michigan.
+          Quality work you can count on! Browse our recent lawn care, cleanups, gutter clearing, and animal damage control projects in Central Michigan.
         </p>
       </div>
     </section>
@@ -73,15 +59,13 @@ const projects = [
     <!-- GALLERY SECTION -->
     <section class="section projects-section">
       <div class="container">
-        <!-- Filter Tabs for the 6 exact services -->
+        <!-- Filter Tabs for services -->
         <div class="filter-tabs">
           <button class="filter-tab active" data-filter="all">All Projects</button>
           <button class="filter-tab" data-filter="lawn">Lawn Care</button>
-          <button class="filter-tab" data-filter="snow">Snow Plowing</button>
-          <button class="filter-tab" data-filter="debris">Debris Removal</button>
-          <button class="filter-tab" data-filter="hauling">Car Hauling</button>
-          <button class="filter-tab" data-filter="cleanup">Spring / Fall Cleanup</button>
-          <button class="filter-tab" data-filter="storm">Storm Damage</button>
+          <button class="filter-tab" data-filter="cleanup">Spring / Fall Clean Up</button>
+          <button class="filter-tab" data-filter="gutters">Gutter Cleaning</button>
+          <button class="filter-tab" data-filter="animal">Animal Damage Control</button>
         </div>
 
         <!-- Project Cards Grid -->

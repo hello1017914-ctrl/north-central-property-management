@@ -6,17 +6,15 @@ import Footer from '../components/Footer.astro';
 const serviceImages = {
   hero: "/images/hero.jpg",
   lawnCare: "/images/service-lawn-care.jpg",
-  snowPlow: "/images/service-snow-plow.jpg",
-  debris: "/images/service-debris.jpg",
-  carHaul: "/images/service-car-haul.jpg",
   cleanup: "/images/service-cleanup.jpg",
-  stormDamage: "/images/service-storm-damage.jpg"
+  gutterCleaning: "/images/gutter-cleaning.jpg",
+  animalDamage: "/images/animal-damage-control.jpg"
 };
 ---
 
 <Layout 
-  title="Our Services | Elite Property Maintenance LLC"
-  description="Explore our full range of property maintenance services: lawn care, snow plowing, car hauling, debris removal, seasonal cleanup, and storm damage in Central Michigan."
+  title="Our Services | North Central Property Management - (989) 259-8499"
+  description="Explore our core services: lawn care, spring and fall cleanups, gutter cleaning, and animal damage control in Central Michigan. Call (989) 259-8499."
 >
   <Header currentPage="services" />
 
@@ -26,11 +24,11 @@ const serviceImages = {
       <div class="container text-center">
         <div class="section-badge">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
-          <span>Comprehensive Outdoor Solutions</span>
+          <span>North Central Property Management</span>
         </div>
         <h1 class="page-hero-title">EXPERT LAWN &amp; PROPERTY SERVICES</h1>
         <p class="page-hero-subtitle">
-          From your lawn to your driveway, we do it all! Precision maintenance, heavy hauling, winter safety, and seasonal property transformations.
+          Quality work you can count on! Precision mowing, thorough seasonal cleanups, professional gutter clearing, and humane wildlife exclusion &amp; damage repairs.
         </p>
       </div>
     </section>
@@ -40,11 +38,9 @@ const serviceImages = {
       <div class="container">
         <div class="nav-pills-row">
           <a href="#lawn-care" class="pill-nav-item">Lawn Care</a>
-          <a href="#snow-plowing" class="pill-nav-item">Snow Plowing</a>
-          <a href="#debris-removal" class="pill-nav-item">Debris Removal</a>
-          <a href="#car-hauling" class="pill-nav-item">Car Hauling</a>
-          <a href="#cleanup" class="pill-nav-item">Seasonal Cleanups</a>
-          <a href="#storm-damage" class="pill-nav-item">Storm Damage</a>
+          <a href="#cleanup" class="pill-nav-item">Spring / Fall Clean Up</a>
+          <a href="#gutter-cleaning" class="pill-nav-item">Gutter Cleaning</a>
+          <a href="#animal-damage-control" class="pill-nav-item">Animal Damage Control</a>
         </div>
       </div>
     </section>
@@ -76,147 +72,91 @@ const serviceImages = {
             </ul>
             <div class="service-block-actions">
               <a href="/estimate" class="btn-pill-green">Request Free Lawn Quote &rarr;</a>
-              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+              <a href="tel:989-259-8499" class="btn-pill-white">Call (989) 259-8499</a>
             </div>
           </div>
         </article>
 
-        <!-- 2. SNOW PLOWING -->
-        <article class="service-block reverse" id="snow-plowing">
+        <!-- 2. SPRING / FALL CLEAN UP -->
+        <article class="service-block reverse" id="cleanup">
           <div class="service-block-media">
-            <img src={serviceImages.snowPlow} alt="Snow plowing truck" loading="lazy" />
-            <span class="media-badge">Winter Essential</span>
+            <img src={serviceImages.cleanup} alt="Fall leaf cleanup and property raking" loading="lazy" />
+            <span class="media-badge">Seasonal Essential</span>
           </div>
           <div class="service-block-body">
             <div class="section-badge">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
               <span>Service 02</span>
             </div>
-            <h2 class="service-block-title">SNOW PLOWING &amp; WINTER MAINTENANCE</h2>
+            <h2 class="service-block-title">SPRING &amp; FALL CLEAN UP</h2>
             <p class="service-block-lead">
-              Michigan winters demand dependable, proactive snow management. We keep driveways, commercial parking lots, and walkways clear and safe all season long.
+              Preparing your landscape for changing seasons is vital for long-term turf health and preventing mold or pests from nesting under dead foliage.
             </p>
             <ul class="service-check-list">
-              <li><strong>Residential Driveway Plowing:</strong> Cleared early before your morning commute with care around lawn edges.</li>
-              <li><strong>Commercial Parking Lot Clearing:</strong> Zero-downtime snow removal keeping your business accessible and liability-free.</li>
-              <li><strong>Sidewalk Clearing &amp; Salting:</strong> Eco-friendly ice melting applications to eliminate slip and fall hazards.</li>
-              <li><strong>24/7 Blizzard Response:</strong> We monitor radar round the clock to dispatch trucks as soon as snow triggers accumulate.</li>
+              <li><strong>Spring Thaw Cleanups:</strong> Raking winter dead grass, sticks, and gravel spread during winter plowing.</li>
+              <li><strong>Fall Leaf Raking &amp; Haul-Away:</strong> Deep leaf clearing from turf, landscape beds, window wells, and patios.</li>
+              <li><strong>Garden Bed Refresh:</strong> Perennial cutbacks, edging freshening, and winter preparation.</li>
+              <li><strong>Yard Waste Removal:</strong> We load and haul away all bags and piles so your yard is left spotless.</li>
             </ul>
             <div class="service-block-actions">
-              <a href="/estimate" class="btn-pill-green">Get Winter Snow Contract &rarr;</a>
-              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+              <a href="/estimate" class="btn-pill-green">Book Seasonal Cleanup &rarr;</a>
+              <a href="tel:989-259-8499" class="btn-pill-white">Call (989) 259-8499</a>
             </div>
           </div>
         </article>
 
-        <!-- 3. DEBRIS REMOVAL -->
-        <article class="service-block" id="debris-removal">
+        <!-- 3. GUTTER CLEANING -->
+        <article class="service-block" id="gutter-cleaning">
           <div class="service-block-media">
-            <img src={serviceImages.debris} alt="Debris and brush hauling" loading="lazy" />
-            <span class="media-badge">Heavy Duty</span>
+            <img src={serviceImages.gutterCleaning} alt="Professional gutter cleaning technician" loading="lazy" />
+            <span class="media-badge">Protection Priority</span>
           </div>
           <div class="service-block-body">
             <div class="section-badge">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
               <span>Service 03</span>
             </div>
-            <h2 class="service-block-title">DEBRIS &amp; BRUSH REMOVAL</h2>
+            <h2 class="service-block-title">PROFESSIONAL GUTTER CLEANING</h2>
             <p class="service-block-lead">
-              Overgrown brush, tree branches, piles of lawn waste, and yard clutter ruin curb appeal and attract pests. We chop, load, and haul it away.
+              Clogged gutters cause water overflow, roof edge rotting, ice damming in winter, and foundation water damage. We keep your drainage system completely clear.
             </p>
             <ul class="service-check-list">
-              <li><strong>Downed Branches &amp; Yard Waste:</strong> Complete removal of deadwood, tree clippings, and organic piles.</li>
-              <li><strong>Fence Line &amp; Brush Clearing:</strong> Clearing tangled weeds, wild buckthorn, and invasive growth along perimeters.</li>
-              <li><strong>Environmentally Responsible Disposal:</strong> Wood and organic yard debris are diverted to regional mulching and compost centers.</li>
-              <li><strong>Zero Heavy Lifting for You:</strong> Our crew loads the trailers, rakes the site clean, and hauls everything away.</li>
+              <li><strong>Hand &amp; Tool Debris Extraction:</strong> Removal of wet leaves, pine needles, twigs, and sludge buildup.</li>
+              <li><strong>Downspout Snaking &amp; Flushing:</strong> Ensuring water flows unrestricted from eaves to ground level outlets.</li>
+              <li><strong>Fascia &amp; Gutter Inspection:</strong> Checking for sagging brackets, loose spikes, and joint leaks.</li>
+              <li><strong>Ground-Level Clean Sweep:</strong> Any debris cleared from the roof is caught or raked clean before departure.</li>
             </ul>
             <div class="service-block-actions">
-              <a href="/estimate" class="btn-pill-green">Get Debris Quote &rarr;</a>
-              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+              <a href="/estimate" class="btn-pill-green">Schedule Gutter Cleaning &rarr;</a>
+              <a href="tel:989-259-8499" class="btn-pill-white">Call (989) 259-8499</a>
             </div>
           </div>
         </article>
 
-        <!-- 4. CAR HAULING -->
-        <article class="service-block reverse" id="car-hauling">
+        <!-- 4. ANIMAL DAMAGE CONTROL -->
+        <article class="service-block reverse" id="animal-damage-control">
           <div class="service-block-media">
-            <img src={serviceImages.carHaul} alt="Vehicle and car hauling truck" loading="lazy" />
-            <span class="media-badge">Local &amp; Long-Distance</span>
+            <img src={serviceImages.animalDamage} alt="Animal damage repair and humane wildlife exclusion" loading="lazy" />
+            <span class="media-badge">Specialized Defense</span>
           </div>
           <div class="service-block-body">
             <div class="section-badge">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
               <span>Service 04</span>
             </div>
-            <h2 class="service-block-title">VEHICLE &amp; CAR HAULING</h2>
+            <h2 class="service-block-title">ANIMAL DAMAGE CONTROL &amp; REPAIR</h2>
             <p class="service-block-lead">
-              Got an eyesore junk car, non-running truck, trailer, or equipment taking up valuable space? We provide professional flatbed and winch transport.
+              Wild animals such as raccoons, squirrels, bats, and birds can cause extensive structural destruction to soffits, fascia, attic vents, and crawlspaces. We repair and secure your property.
             </p>
             <ul class="service-check-list">
-              <li><strong>Junk &amp; Non-Running Vehicles:</strong> Fast extraction from driveways, fields, garages, or backyards.</li>
-              <li><strong>Local &amp; Long-Distance Transport:</strong> Reliable equipment, tractor, and vehicle relocation across Michigan.</li>
-              <li><strong>Proper Winching &amp; Secure Strapping:</strong> Handled by experienced operators with safety-first protocol.</li>
-              <li><strong>Licensed &amp; Insured:</strong> Full cargo protection and certified equipment for peace of mind.</li>
+              <li><strong>Entry Point Inspection:</strong> Locating gnawed eaves, displaced vent covers, and damaged fascia boards.</li>
+              <li><strong>Humane Exclusion Solutions:</strong> Ensuring wildlife exits safely without becoming trapped inside structures.</li>
+              <li><strong>Structural Wood &amp; Metal Repairs:</strong> Patching, replacing damaged boards, and installing heavy-gauge wire exclusion screening.</li>
+              <li><strong>Long-Term Prevention:</strong> Reinforcing vulnerable exterior perimeters to stop future animal infiltration.</li>
             </ul>
             <div class="service-block-actions">
-              <a href="/estimate" class="btn-pill-green">Schedule Vehicle Haul &rarr;</a>
-              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 5. SEASONAL CLEANUPS -->
-        <article class="service-block" id="cleanup">
-          <div class="service-block-media">
-            <img src={serviceImages.cleanup} alt="Fall leaf cleanup" loading="lazy" />
-            <span class="media-badge">Spring &amp; Fall</span>
-          </div>
-          <div class="service-block-body">
-            <div class="section-badge">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
-              <span>Service 05</span>
-            </div>
-            <h2 class="service-block-title">SPRING &amp; FALL SEASONAL CLEANUPS</h2>
-            <p class="service-block-lead">
-              Preparing your landscape for the changing seasons is vital for long-term turf health and preventing mold or rot under thick snow.
-            </p>
-            <ul class="service-check-list">
-              <li><strong>Spring Thaw Cleanups:</strong> Raking winter dead grass, sticks, and gravel spread during snow plowing.</li>
-              <li><strong>Fall Leaf Vacuuming &amp; Haul:</strong> Deep leaf clearing from turf, landscape beds, window wells, and patios.</li>
-              <li><strong>Garden Bed Refresh:</strong> Perennial cutbacks, edging freshening, and winter preparation.</li>
-              <li><strong>Lawn Aeration Prep:</strong> Relieving soil compaction to allow water and fertilizer deep into the root zone.</li>
-            </ul>
-            <div class="service-block-actions">
-              <a href="/estimate" class="btn-pill-green">Book Seasonal Cleanup &rarr;</a>
-              <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- 6. EMERGENCY STORM DAMAGE -->
-        <article class="service-block reverse" id="storm-damage">
-          <div class="service-block-media">
-            <img src={serviceImages.stormDamage} alt="Storm damage tree removal" loading="lazy" />
-            <span class="media-badge">24/7 Rapid Response</span>
-          </div>
-          <div class="service-block-body">
-            <div class="section-badge">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5 19 5 19C5 19 14 19 19 14C20.5 12.5 21 9 21 8C20 8 18 8 17 8Z"/></svg>
-              <span>Service 06</span>
-            </div>
-            <h2 class="service-block-title">EMERGENCY STORM DAMAGE RESTORATION</h2>
-            <p class="service-block-lead">
-              Severe thunderstorms, ice storms, and high wind can cause dangerous tree branches to collapse across driveways, roofs, and structures.
-            </p>
-            <ul class="service-check-list">
-              <li><strong>24/7 Priority Emergency Line:</strong> Call 989-544-0791 immediately for rapid emergency response.</li>
-              <li><strong>Downed Tree &amp; Limb Chainsawing:</strong> Careful bucking of fallen timber without further property impact.</li>
-              <li><strong>Driveway &amp; Access Clearance:</strong> Opening vital access routes for homeowners and emergency vehicles.</li>
-              <li><strong>Debris Hauling &amp; Tarping:</strong> Full site cleanup and debris removal so repairs can proceed smoothly.</li>
-            </ul>
-            <div class="service-block-actions">
-              <a href="tel:989-544-0791" class="btn-pill-green">Urgent Storm Call: 989-544-0791</a>
-              <a href="/estimate" class="btn-pill-white">Submit Online Request &rarr;</a>
+              <a href="/estimate" class="btn-pill-green">Get Damage Control Estimate &rarr;</a>
+              <a href="tel:989-259-8499" class="btn-pill-white">Call (989) 259-8499</a>
             </div>
           </div>
         </article>
@@ -224,20 +164,20 @@ const serviceImages = {
       </div>
     </section>
 
-    <!-- VETERAN DISCOUNT BANNER -->
+    <!-- PROMO BANNER -->
     <section class="veteran-promo-section">
       <div class="container text-center">
         <div class="section-badge">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/></svg>
-          <span>Honoring Those Who Served</span>
+          <span>North Central Property Management</span>
         </div>
-        <h2 class="promo-title">20% OFF REGULAR SERVICES FOR VETERANS &amp; SENIORS</h2>
+        <h2 class="promo-title">QUALITY WORK YOU CAN COUNT ON</h2>
         <p class="promo-desc">
-          Combine any of our maintenance services and receive our veteran or senior discount. Contact us today to learn more.
+          Contact us today to schedule your lawn care, seasonal cleanups, gutter cleaning, or wildlife damage repair. Fast, dependable service across Central Michigan.
         </p>
         <div class="promo-actions">
           <a href="/estimate" class="btn-pill-green">Request Your Free Estimate &rarr;</a>
-          <a href="tel:989-544-0791" class="btn-pill-white">Call 989-544-0791</a>
+          <a href="tel:989-259-8499" class="btn-pill-white">Call (989) 259-8499</a>
         </div>
       </div>
     </section>
